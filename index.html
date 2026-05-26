@@ -1,165 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Órbita · Frutillar</title>
-  <meta name="description" content="Órbita Café y Órbita Fuente — dos locales, una sola dirección. Frutillar, Chile.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:     #08080a;
-      --card:   #121216;
-      --border: #2a2a32;
-      --muted:  #8a8a98;
-      --text:   #f0f0f5;
-      --cafe:   #8B1A1A;
-      --fuente: #D4872A;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Órbita · Frutillar</title>
+<meta name="description" content="Órbita Café y Órbita Fuente — dos locales, una sola dirección. Frutillar, Chile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:     #08080a;
+    --card:   #121216;
+    --border: #2a2a32;
+    --muted:  #8a8a98;
+    --text:   #f0f0f5;
+    --cafe:   #8B1A1A;
+    --fuente: #D4872A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: clamp(36px, 10vw, 56px) clamp(16px, 5vw, 24px) clamp(40px, 10vw, 56px);
+  }
+  .wrap { width: 100%; max-width: 480px; }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  .logo { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 10vw, 3.4rem); letter-spacing: 4px; text-align: center; color: var(--text); line-height: 1; font-variant-numeric: lining-nums; }
+  .logo-sub { font-size: clamp(0.65rem, 2vw, 0.75rem); letter-spacing: 5px; text-transform: uppercase; color: var(--muted); text-align: center; margin-top: 10px; }
+  .divider { width: 40px; height: 1px; background: #3a3a44; margin: 24px auto 32px; }
 
-    body {
-      min-height: 100vh;
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 48px 20px 56px;
-    }
+  .grid { display: flex; flex-direction: column; gap: 14px; }
 
-    .wrap {
-      width: 100%;
-      max-width: 480px;
-    }
+  a.card {
+    display: flex; align-items: center; gap: 18px;
+    text-decoration: none; color: inherit;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 18px; padding: clamp(16px, 4vw, 22px) clamp(16px, 4vw, 22px);
+    transition: transform 0.2s;
+  }
+  a.card:hover { transform: translateY(-2px); }
+  a.card:active { transform: scale(0.98); }
+  a.card.cafe   { border-left: 4px solid var(--cafe); }
+  a.card.fuente { border-left: 4px solid var(--fuente); }
 
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.6rem, 10vw, 3.4rem);
-      letter-spacing: 4px;
-      text-align: center;
-      color: var(--text);
-      line-height: 1;
-      font-variant-numeric: lining-nums;
-    }
+  .card-emoji { font-size: clamp(1.6rem, 5vw, 2rem); width: 48px; text-align: center; flex-shrink: 0; }
+  .card-body { text-align: left; flex: 1; }
+  .card-body strong { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.2rem, 4vw, 1.4rem); letter-spacing: 3px; display: block; }
+  a.card.cafe   .card-body strong { color: #e8b4b4; }
+  a.card.fuente .card-body strong { color: var(--fuente); }
+  .card-body span { font-size: clamp(0.75rem, 2.5vw, 0.82rem); color: var(--muted); margin-top: 4px; display: block; }
+  .card-arrow { font-size: 1rem; color: var(--border); flex-shrink: 0; }
 
-    .logo-sub {
-      font-size: 0.72rem;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: #3a3a44;
-      margin: 24px auto 32px;
-    }
-
-    .grid {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    a.card {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      text-decoration: none;
-      color: inherit;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 20px 22px;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-
-    a.card:hover { transform: translateY(-2px); }
-
-    a.card.cafe   { border-left: 4px solid var(--cafe); }
-    a.card.fuente { border-left: 4px solid var(--fuente); }
-
-    .card-emoji {
-      font-size: 2rem;
-      width: 48px;
-      text-align: center;
-      flex-shrink: 0;
-    }
-
-    .card-body { text-align: left; flex: 1; }
-
-    .card-body strong {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.4rem;
-      letter-spacing: 3px;
-      display: block;
-    }
-
-    a.card.cafe   .card-body strong { color: var(--cafe); }
-    a.card.fuente .card-body strong { color: var(--fuente); }
-
-    .card-body span {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 4px;
-      display: block;
-    }
-
-    .card-arrow {
-      font-size: 1rem;
-      color: var(--border);
-      flex-shrink: 0;
-    }
-
-    .footer {
-      margin-top: 40px;
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .footer-hr {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      color: #4a4a56;
-      margin-bottom: 6px;
-    }
-
-    a.location-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.78rem;
-      transition: color 0.2s;
-      margin-top: 2px;
-    }
-
-    a.location-link:hover { color: var(--text); }
-
-    .pin { font-size: 0.85rem; }
-  </style>
+  .footer { margin-top: 40px; text-align: center; }
+  .footer-hr { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: #4a4a56; margin-bottom: 8px; }
+  a.location-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    color: var(--muted); text-decoration: none;
+    font-size: clamp(0.72rem, 2.5vw, 0.8rem);
+    transition: color 0.2s;
+  }
+  a.location-link:hover { color: var(--text); }
+</style>
 </head>
 <body>
   <div class="wrap">
 
     <div class="logo">Órbita</div>
-    <div class="logo-sub">Frutillar · Chile</div>
+    <div class="logo-sub">Frutillar</div>
     <div class="divider"></div>
 
     <div class="grid">
-
       <a class="card cafe" href="cafe.html">
         <span class="card-emoji">☕</span>
         <div class="card-body">
@@ -177,13 +93,12 @@
         </div>
         <span class="card-arrow">›</span>
       </a>
-
     </div>
 
     <div class="footer">
       <div class="footer-hr">8:30 — 19:00 hrs</div>
       <a class="location-link" href="https://maps.google.com/?q=Anibal+Pinto+251,+Frutillar,+Chile" target="_blank">
-        <span class="pin">📍</span> Junto al Gym Blu · Aníbal Pinto 251, Frutillar
+        📍 Junto al Gym Blu · Aníbal Pinto 251, Frutillar
       </a>
     </div>
 
