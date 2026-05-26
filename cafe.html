@@ -9,8 +9,6 @@
 <style>
   :root {
     --primary: #8B1A1A;
-    --accent:  #A0522D;
-    --gold:    #C4922A;
     --bg:      #FAF3E0;
     --card:    #FFF8EE;
     --border:  #E8D5B0;
@@ -22,8 +20,8 @@
 
   .hero { border-bottom: 3px solid var(--primary); padding: clamp(32px, 8vw, 48px) 24px clamp(24px, 6vw, 36px); text-align: center; }
   .logo { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 8vw, 2.8rem); letter-spacing: 3px; color: var(--primary); line-height: 1; font-variant-numeric: lining-nums; }
-  .logo-sub { font-size: clamp(0.65rem, 2vw, 0.78rem); letter-spacing: 5px; text-transform: uppercase; color: var(--accent); margin-top: 8px; }
-  .dline { width: 48px; height: 1px; background: var(--gold); margin: 18px auto 0; }
+  .logo-sub { font-size: clamp(0.65rem, 2vw, 0.78rem); letter-spacing: 5px; text-transform: uppercase; color: var(--primary); margin-top: 8px; }
+  .dline { width: 48px; height: 1px; background: var(--primary); margin: 18px auto 0; }
 
   .menu-wrap { max-width: 480px; margin: 0 auto; padding: clamp(20px, 5vw, 28px) clamp(18px, 5vw, 28px) 40px; }
 
@@ -31,24 +29,24 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(0.85rem, 3vw, 1rem);
     letter-spacing: 4px;
-    color: var(--accent);
+    color: var(--primary);
     border-left: 3px solid var(--primary);
     border-radius: 0;
     padding-left: 10px;
     margin: 24px 0 10px;
   }
   .cat-label:first-child { margin-top: 0; }
-  .cat-label span { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 1px; color: var(--muted); font-style: italic; text-transform: none; }
+  .cat-label span { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 1px; color: var(--muted); text-transform: none; font-weight: 400; }
 
   .item { display: flex; align-items: center; padding: clamp(10px, 3vw, 14px) 0; border-bottom: 0.5px solid var(--border); font-size: clamp(0.88rem, 3vw, 1rem); font-weight: 600; color: var(--text); }
   .item:last-child { border-bottom: none; }
-  .item::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-right: 12px; flex-shrink: 0; }
+  .item::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); margin-right: 12px; flex-shrink: 0; }
 
   .jugos-wrap {
     margin-top: 24px;
     background: var(--card);
     border: 1px solid var(--border);
-    border-left: 3px solid var(--gold);
+    border-left: 3px solid var(--primary);
     border-radius: 0 12px 12px 0;
     padding: 14px 16px;
     display: flex;
@@ -56,12 +54,12 @@
     gap: 12px;
   }
   .jugos-icon { font-size: 1.4rem; flex-shrink: 0; }
-  .jugos-text strong { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: var(--accent); display: block; }
+  .jugos-text strong { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: var(--primary); display: block; }
   .jugos-text span { font-size: 0.75rem; color: var(--muted); margin-top: 2px; display: block; }
 
   .footer { text-align: center; padding: 20px 24px 44px; border-top: 1px solid var(--border); max-width: 480px; margin: 0 auto; }
-  .footer-gold { color: var(--gold); font-size: 1rem; margin-bottom: 10px; }
-  .location-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .footer-gold { color: var(--primary); font-size: 1rem; margin-bottom: 10px; }
+  .location-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
   .location-btn {
     display: inline-flex; align-items: center; gap: 6px;
     background: var(--card); border: 1px solid var(--border);
@@ -69,8 +67,8 @@
     font-size: 0.78rem; color: var(--muted);
     text-decoration: none; transition: border-color 0.2s, color 0.2s;
   }
-  .location-btn:hover { border-color: var(--gold); color: var(--accent); }
-  .footer-hr { font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem; letter-spacing: 2px; color: var(--accent); margin-top: 12px; }
+  .location-btn:hover { border-color: var(--primary); color: var(--primary); }
+  .footer-hr { font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem; letter-spacing: 2px; color: var(--primary); margin-top: 12px; }
 </style>
 </head>
 <body>
