@@ -10,11 +10,9 @@
   :root {
     --primary: #D4872A;
     --accent:  #7A3B1E;
-    --gold:    #D4872A;
     --bg:      #0a0a0a;
     --card:    #2A1508;
     --border:  #3D2410;
-    --border2: #5A3520;
     --text:    #F5DEB3;
     --muted:   #c4a882;
   }
@@ -39,6 +37,15 @@
     margin: 24px 0 10px;
   }
   .cat-label:first-child { margin-top: 0; }
+
+  .vegan-note {
+    font-size: 0.72rem;
+    color: #6fcf97;
+    margin: -4px 0 10px 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 
   .item { display: flex; align-items: center; padding: clamp(10px, 3vw, 14px) 0; border-bottom: 0.5px solid var(--border); font-size: clamp(0.88rem, 3vw, 1rem); font-weight: 600; color: var(--text); }
   .item:last-child { border-bottom: none; }
@@ -84,6 +91,7 @@
 <div class="menu-wrap">
 
   <div class="cat-label">Sándwiches & Completos</div>
+  <div class="vegan-note">🌱 Opciones veganas disponibles</div>
   <div class="item">Completo</div>
   <div class="item">Mechada</div>
   <div class="item">Lomo</div>
