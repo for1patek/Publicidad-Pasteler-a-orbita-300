@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Órbita Fuente · Carta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #D4872A;
+    --accent:  #7A3B1E;
+    --gold:    #D4872A;
+    --bg:      #0a0a0a;
+    --card:    #2A1508;
+    --border:  #3D2410;
+    --border2: #5A3520;
+    --text:    #F5DEB3;
+    --muted:   #c4a882;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; }
+
+  .hero { border-bottom: 3px solid var(--primary); padding: clamp(32px, 8vw, 48px) 24px clamp(24px, 6vw, 36px); text-align: center; }
+  .logo { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 8vw, 2.8rem); letter-spacing: 3px; color: var(--primary); line-height: 1; font-variant-numeric: lining-nums; }
+  .logo-sub { font-size: clamp(0.65rem, 2vw, 0.78rem); letter-spacing: 5px; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+  .dline { width: 48px; height: 1px; background: var(--primary); opacity: 0.4; margin: 18px auto 0; }
+
+  .menu-wrap { max-width: 480px; margin: 0 auto; padding: clamp(20px, 5vw, 28px) clamp(18px, 5vw, 28px) 40px; }
+
+  .cat-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+    letter-spacing: 4px;
+    color: var(--primary);
+    border-left: 3px solid var(--accent);
+    border-radius: 0;
+    padding-left: 10px;
+    margin: 24px 0 10px;
+  }
+  .cat-label:first-child { margin-top: 0; }
+
+  .item { display: flex; align-items: center; padding: clamp(10px, 3vw, 14px) 0; border-bottom: 0.5px solid var(--border); font-size: clamp(0.88rem, 3vw, 1rem); font-weight: 600; color: var(--text); }
+  .item:last-child { border-bottom: none; }
+  .item::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); opacity: 0.7; margin-right: 12px; flex-shrink: 0; }
+
+  .jugos-wrap {
+    margin-top: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--primary);
+    border-radius: 0 12px 12px 0;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .jugos-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .jugos-text strong { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: var(--primary); display: block; }
+  .jugos-text span { font-size: 0.75rem; color: var(--muted); margin-top: 2px; display: block; }
+
+  .footer { text-align: center; padding: 20px 24px 44px; border-top: 1px solid var(--border); max-width: 480px; margin: 0 auto; }
+  .footer-gold { color: var(--primary); font-size: 1rem; opacity: 0.6; margin-bottom: 10px; }
+  .location-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
+  .location-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 20px; padding: 8px 16px;
+    font-size: 0.78rem; color: var(--muted);
+    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+  }
+  .location-btn:hover { border-color: var(--primary); color: var(--text); }
+  .footer-hr { font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem; letter-spacing: 2px; color: var(--primary); margin-top: 12px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="logo">Órbita Fuente</div>
+  <div class="logo-sub">Frutillar</div>
+  <div class="dline"></div>
+</div>
+
+<div class="menu-wrap">
+
+  <div class="cat-label">Sándwiches & Completos</div>
+  <div class="item">Completo</div>
+  <div class="item">Mechada</div>
+  <div class="item">Lomo</div>
+  <div class="item">Hamburguesa</div>
+  <div class="item">Churrasco</div>
+
+  <div class="cat-label">Hand Roll</div>
+  <div class="item">Camarón</div>
+  <div class="item">Pollo</div>
+
+  <div class="cat-label">Papas & Extras</div>
+  <div class="item">Papas fritas</div>
+  <div class="item">Salchipapa</div>
+  <div class="item">Papas con Nuggets</div>
+
+  <div class="jugos-wrap">
+    <div class="jugos-icon">🧋</div>
+    <div class="jugos-text">
+      <strong>Jugos naturales</strong>
+      <span>100% naturales · Sabores variados</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-gold">✦</div>
+  <div class="location-label">¿Dónde nos ubicamos?</div>
+  <a class="location-btn" href="https://maps.google.com/?q=Anibal+Pinto+251,+Frutillar,+Chile" target="_blank">
+    📍 Toca aquí para ubicarnos
+  </a>
+  <div class="footer-hr">8:30 — 19:00 hrs</div>
+</div>
+
+</body>
+</html>
