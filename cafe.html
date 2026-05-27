@@ -57,7 +57,7 @@
   .jugos-text strong { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: var(--primary); display: block; }
   .jugos-text span { font-size: 0.75rem; color: var(--muted); margin-top: 2px; display: block; }
 
-  .slider-wrap { position: relative; width: 100%; max-width: 480px; margin: 0 auto 0; border-radius: 0; overflow: hidden; aspect-ratio: 16/9; }
+  .slider-wrap { position: relative; width: 100%; max-width: 480px; margin: 0 auto 0; border-radius: 0; overflow: hidden; aspect-ratio: 4/3; }
   .slider-track { display: flex; height: 100%; transition: transform 0.5s ease; }
   .slide { min-width: 100%; height: 100%; background-size: cover; background-position: center; }
   .slider-btn {
@@ -72,7 +72,7 @@
   .slider-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0; background: var(--bg); }
   .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); cursor: pointer; transition: background 0.2s; }
   .dot.active { background: var(--primary); }
-  .footer-gold { color: var(--primary); font-size: 1rem; margin-bottom: 10px; }
+  .footer { text-align: center; padding: 20px 24px 44px; border-top: 1px solid var(--border); max-width: 480px; margin: 0 auto; }
   .location-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
   .location-btn {
     display: inline-flex; align-items: center; gap: 6px;
@@ -128,7 +128,10 @@
     <div class="slide" style="background-image:url('https://i.ibb.co/d4GJzmst/pie-de-limon-1.jpg');background-size:cover;background-position:center"></div>
     <div class="slide" style="background-image:url('https://i.ibb.co/BVPxChLW/pie-y-brownie-1.jpg');background-size:cover;background-position:center"></div>
     <div class="slide" style="background-image:url('https://i.ibb.co/BKjvf1L0/brownie-y-caf-1.jpg');background-size:cover;background-position:center"></div>
-    <div class="slide" style="background-image:url('https://i.ibb.co/v63HqGh6/Galletas-1.jpg');background-size:80%;background-position:center;background-repeat:no-repeat"></div>
+    <div class="slide" style="position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/v63HqGh6/Galletas-1.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
+      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/v63HqGh6/Galletas-1.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
+    </div>
     <div class="slide" style="background-image:url('https://i.ibb.co/F4FVLv8j/pie-de-lim-n-y-caf-1.jpg');background-size:cover;background-position:center"></div>
   </div>
   <button class="slider-btn prev" onclick="mover(-1)">‹</button>
@@ -146,13 +149,12 @@
 <div class="footer">
   <div class="footer-gold">✦</div>
   <div class="location-label">¿Dónde nos ubicamos?</div>
-  <a class="location-btn" href="https://maps.google.com/?q=Anibal+Pinto+251,+Frutillar,+Chile" target="_blank">
+  <a class="location-btn" href="https://maps.app.goo.gl/RQJpEevGV9xaCPWX9" target="_blank">
     📍 Toca aquí para ubicarnos
   </a>
   <div class="footer-hr">8:30 — 19:00 hrs</div>
 </div>
 
-</body>
 <script>
   let actual = 0;
   const total = 6;
