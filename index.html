@@ -128,8 +128,11 @@
     <div class="slider-wrap">
       <div class="slider-track" id="track">
         <div class="slide" style="background-image:url('https://i.ibb.co/WCzpjMy/Whats-App-Image-2026-05-26-at-18-58-22.jpg');background-size:cover;background-position:center"></div>
-        <div class="slide"><div class="slide-icon">📷</div><div class="slide-label">Foto 2</div></div>
-        <div class="slide"><div class="slide-icon">📷</div><div class="slide-label">Foto 3</div></div>
+        <div class="slide" style="background-image:url('https://i.ibb.co/d4GJzmst/pie-de-limon-1.jpg');background-size:cover;background-position:center"></div>
+        <div class="slide" style="background-image:url('https://i.ibb.co/BVPxChLW/pie-y-brownie-1.jpg');background-size:cover;background-position:center"></div>
+        <div class="slide" style="background-image:url('https://i.ibb.co/BKjvf1L0/brownie-y-caf-1.jpg');background-size:cover;background-position:center"></div>
+        <div class="slide" style="background-image:url('https://i.ibb.co/v63HqGh6/Galletas-1.jpg');background-size:cover;background-position:center"></div>
+        <div class="slide" style="background-image:url('https://i.ibb.co/F4FVLv8j/pie-de-lim-n-y-caf-1.jpg');background-size:cover;background-position:center"></div>
       </div>
       <button class="slider-btn prev" onclick="mover(-1)">‹</button>
       <button class="slider-btn next" onclick="mover(1)">›</button>
@@ -138,6 +141,9 @@
       <div class="dot active" onclick="irA(0)"></div>
       <div class="dot" onclick="irA(1)"></div>
       <div class="dot" onclick="irA(2)"></div>
+      <div class="dot" onclick="irA(3)"></div>
+      <div class="dot" onclick="irA(4)"></div>
+      <div class="dot" onclick="irA(5)"></div>
     </div>
 
     <div class="footer">
@@ -152,7 +158,7 @@
 
   <script>
     let actual = 0;
-    const total = 3;
+    const total = 6;
     const track = document.getElementById('track');
     const dots = document.querySelectorAll('.dot');
     function irA(n) {
