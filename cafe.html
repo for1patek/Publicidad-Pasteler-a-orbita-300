@@ -165,8 +165,12 @@
     track.style.transform = `translateX(-${actual * 100}%)`;
     dots.forEach((d, i) => d.classList.toggle('active', i === actual));
   }
-  function mover(dir) { irA(actual + dir); }
-  setInterval(() => mover(1), 4000);
+  let timer = setInterval(() => mover(1), 4000);
+  function mover(dir) {
+    clearInterval(timer);
+    irA(actual + dir);
+    timer = setInterval(() => mover(1), 4000);
+  }
 </script>
 </body>
 </html>
