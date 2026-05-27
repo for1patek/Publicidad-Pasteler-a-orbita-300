@@ -57,7 +57,21 @@
   .jugos-text strong { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: var(--primary); display: block; }
   .jugos-text span { font-size: 0.75rem; color: var(--muted); margin-top: 2px; display: block; }
 
-  .footer { text-align: center; padding: 20px 24px 44px; border-top: 1px solid var(--border); max-width: 480px; margin: 0 auto; }
+  .slider-wrap { position: relative; width: 100%; max-width: 480px; margin: 0 auto 0; border-radius: 0; overflow: hidden; aspect-ratio: 16/9; }
+  .slider-track { display: flex; height: 100%; transition: transform 0.5s ease; }
+  .slide { min-width: 100%; height: 100%; background-size: cover; background-position: center; }
+  .slider-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2);
+    color: #fff; border-radius: 50%; width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 1rem;
+  }
+  .slider-btn.prev { left: 10px; }
+  .slider-btn.next { right: 10px; }
+  .slider-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0; background: var(--bg); }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); cursor: pointer; transition: background 0.2s; }
+  .dot.active { background: var(--primary); }
   .footer-gold { color: var(--primary); font-size: 1rem; margin-bottom: 10px; }
   .location-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
   .location-btn {
@@ -108,6 +122,27 @@
 
 </div>
 
+<div class="slider-wrap">
+  <div class="slider-track" id="track">
+    <div class="slide" style="background-image:url('https://i.ibb.co/WCzpjMy/Whats-App-Image-2026-05-26-at-18-58-22.jpg')"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/d4GJzmst/pie-de-limon-1.jpg')"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/BVPxChLW/pie-y-brownie-1.jpg')"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/BKjvf1L0/brownie-y-caf-1.jpg')"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/v63HqGh6/Galletas-1.jpg')"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/F4FVLv8j/pie-de-lim-n-y-caf-1.jpg')"></div>
+  </div>
+  <button class="slider-btn prev" onclick="mover(-1)">‹</button>
+  <button class="slider-btn next" onclick="mover(1)">›</button>
+</div>
+<div class="slider-dots" id="dots">
+  <div class="dot active" onclick="irA(0)"></div>
+  <div class="dot" onclick="irA(1)"></div>
+  <div class="dot" onclick="irA(2)"></div>
+  <div class="dot" onclick="irA(3)"></div>
+  <div class="dot" onclick="irA(4)"></div>
+  <div class="dot" onclick="irA(5)"></div>
+</div>
+
 <div class="footer">
   <div class="footer-gold">✦</div>
   <div class="location-label">¿Dónde nos ubicamos?</div>
@@ -117,5 +152,19 @@
   <div class="footer-hr">8:30 — 19:00 hrs</div>
 </div>
 
+</body>
+<script>
+  let actual = 0;
+  const total = 6;
+  const track = document.getElementById('track');
+  const dots = document.querySelectorAll('.dot');
+  function irA(n) {
+    actual = (n + total) % total;
+    track.style.transform = `translateX(-${actual * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === actual));
+  }
+  function mover(dir) { irA(actual + dir); }
+  setInterval(() => mover(1), 4000);
+</script>
 </body>
 </html>
