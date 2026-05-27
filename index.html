@@ -71,17 +71,8 @@
   .slide:nth-child(3) { background: #10181a; }
   .slide-icon { font-size: 2rem; opacity: 0.25; }
   .slide-label { opacity: 0.35; }
-  .slider-btn {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(0,0,0,0.5); border: 1px solid #3a3a44;
-    color: var(--muted); border-radius: 50%;
-    width: 32px; height: 32px;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer; font-size: 1rem; transition: background 0.2s;
-  }
-  .slider-btn:hover { background: rgba(0,0,0,0.8); }
-  .slider-btn.prev { left: 10px; }
-  .slider-btn.next { right: 10px; }
+.slider-btn:hover { background: rgba(0,0,0,0.8); }
+.slider-btn.next { right: 10px; }
   .slider-dots { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
   .dot { width: 6px; height: 6px; border-radius: 50%; background: #3a3a44; cursor: pointer; transition: background 0.2s; }
   .dot.active { background: var(--muted); }
@@ -137,8 +128,6 @@
         </div>
         <div class="slide" style="background-image:url('https://i.ibb.co/F4FVLv8j/pie-de-lim-n-y-caf-1.jpg');background-size:cover;background-position:center"></div>
       </div>
-      <button class="slider-btn prev" onclick="mover(-1)">‹</button>
-      <button class="slider-btn next" onclick="mover(1)">›</button>
     </div>
     <div class="slider-dots" id="dots">
       <div class="dot active" onclick="irA(0)"></div>
