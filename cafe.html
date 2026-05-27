@@ -60,16 +60,8 @@
   .slider-wrap { position: relative; width: 100%; max-width: 480px; margin: 0 auto 0; border-radius: 0; overflow: hidden; aspect-ratio: 4/3; }
   .slider-track { display: flex; height: 100%; transition: transform 0.5s ease; }
   .slide { min-width: 100%; height: 100%; background-size: cover; background-position: center; }
-  .slider-btn {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2);
-    color: #fff; border-radius: 50%; width: 32px; height: 32px;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer; font-size: 1rem;
-  }
-  .slider-btn.prev { left: 10px; }
-  .slider-btn.next { right: 10px; }
-  .slider-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0; background: var(--bg); }
+.slider-btn.prev { left: 10px; }
+.slider-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0; background: var(--bg); }
   .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); cursor: pointer; transition: background 0.2s; }
   .dot.active { background: var(--primary); }
   .footer { text-align: center; padding: 20px 24px 44px; border-top: 1px solid var(--border); max-width: 480px; margin: 0 auto; }
@@ -134,8 +126,6 @@
     </div>
     <div class="slide" style="background-image:url('https://i.ibb.co/F4FVLv8j/pie-de-lim-n-y-caf-1.jpg');background-size:cover;background-position:center"></div>
   </div>
-  <button class="slider-btn prev" onclick="mover(-1)">‹</button>
-  <button class="slider-btn next" onclick="mover(1)">›</button>
 </div>
 <div class="slider-dots" id="dots">
   <div class="dot active" onclick="irA(0)"></div>
@@ -171,6 +161,13 @@
     irA(actual + dir);
     timer = setInterval(() => mover(1), 4000);
   }
+    // Touch swipe
+    let startX = 0;
+    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive: true});
+    track.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) mover(diff > 0 ? 1 : -1);
+    }, {passive: true});
 </script>
 </body>
 </html>
