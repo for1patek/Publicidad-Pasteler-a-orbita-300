@@ -94,6 +94,13 @@
     opacity: 0.7; transition: opacity 0.2s;
   }
   .btn-back:hover { opacity: 1; }
+
+  .slider-wrap { position: relative; width: 100%; max-width: 480px; margin: 0 auto; border-radius: 0; overflow: hidden; aspect-ratio: 4/3; }
+  .slider-track { display: flex; height: 100%; transition: transform 0.5s ease; }
+  .slide { min-width: 100%; height: 100%; background-size: cover; background-position: center; }
+  .slider-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0; background: var(--bg); }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); cursor: pointer; transition: background 0.2s; }
+  .dot.active { background: var(--primary); }
 </style>
 </head>
 <body>
@@ -134,6 +141,19 @@
 
 </div>
 
+<div class="slider-wrap">
+  <div class="slider-track" id="track">
+    <div class="slide" style="background-image:url('https://i.ibb.co/35pSrNvw/fajita-1.jpg');background-size:cover;background-position:center"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/213THgFy/Completo-1.jpg');background-size:cover;background-position:center"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/S7M9kp1x/Completo-2.jpg');background-size:cover;background-position:center"></div>
+  </div>
+</div>
+<div class="slider-dots" id="dots">
+  <div class="dot active" onclick="irA(0)"></div>
+  <div class="dot" onclick="irA(1)"></div>
+  <div class="dot" onclick="irA(2)"></div>
+</div>
+
 <div class="footer">
   <div class="footer-gold">✦</div>
   <div class="location-label">¿Dónde nos ubicamos?</div>
@@ -143,5 +163,36 @@
   <div class="footer-hr">8:30 — 19:00 hrs</div>
 </div>
 
+<script>
+  let actual = 0;
+  const total = 3;
+  const track = document.getElementById('track');
+  const dots = document.querySelectorAll('.dot');
+
+  function irA(n) {
+    actual = (n + total) % total;
+    track.style.transform = `translateX(-${actual * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === actual));
+  }
+
+  let timer = setInterval(() => mover(1), 4000);
+
+  function mover(dir) {
+    clearInterval(timer);
+    irA(actual + dir);
+    timer = setInterval(() => mover(1), 4000);
+  }
+
+  // Swipe táctil
+  let startX = 0;
+  track.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) mover(diff > 0 ? 1 : -1);
+  }, { passive: true });
+</script>
 </body>
 </html>
