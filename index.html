@@ -3,179 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Órbita 300 · Fuente · Carta</title>
+<title>Órbita 300 · Frutillar</title>
 <link rel="icon" type="image/png" href="https://i.ibb.co/nqkMR2b8/Logo-rbita-300-removebg-preview.png">
 <link rel="apple-touch-icon" href="https://i.ibb.co/nqkMR2b8/Logo-rbita-300-removebg-preview.png">
-<meta property="og:title" content="Órbita 300 · Fuente · Carta">
-<meta property="og:description" content="Sándwiches, completos, papas y más en Frutillar.">
+<meta property="og:title" content="Órbita 300 · Frutillar">
+<meta property="og:description" content="Cafés, pastelería casera, sándwiches y más. Frutillar.">
 <meta property="og:image" content="https://i.ibb.co/nqkMR2b8/Logo-rbita-300-removebg-preview.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --primary: #D4872A;
-    --accent:  #7A3B1E;
-    --bg:      #0a0a0a;
-    --card:    #2A1508;
-    --border:  #3D2410;
-    --text:    #F5DEB3;
-    --muted:   #c4a882;
+    --bg:     #08080a;
+    --card:   #121216;
+    --border: #2a2a32;
+    --muted:  #8a8a98;
+    --text:   #f0f0f5;
+    --cafe:   #8B1A1A;
+    --fuente: #D4872A;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; }
-
-  .hero { border-bottom: 3px solid var(--primary); padding: clamp(32px, 8vw, 48px) 24px clamp(24px, 6vw, 36px); text-align: center; }
-  .logo { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 8vw, 2.8rem); letter-spacing: 3px; color: var(--primary); line-height: 1; font-variant-numeric: lining-nums; }
-  .logo-line { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 4vw, 1.5rem); font-style: italic; font-weight: 500; letter-spacing: 5px; color: var(--muted); margin-left: 10px; vertical-align: middle; }
-  .logo-sub { font-size: clamp(0.65rem, 2vw, 0.78rem); letter-spacing: 5px; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
-  .dline { width: 48px; height: 1px; background: var(--primary); opacity: 0.4; margin: 18px auto 0; }
-
-  .menu-wrap { max-width: 480px; margin: 0 auto; padding: clamp(20px, 5vw, 28px) clamp(18px, 5vw, 28px) 40px; }
-
-  .cat-label {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(0.85rem, 3vw, 1rem);
-    letter-spacing: 4px;
-    color: var(--primary);
-    border-left: 3px solid var(--accent);
-    border-radius: 0;
-    padding-left: 10px;
-    margin: 24px 0 10px;
-  }
-  .cat-label:first-child { margin-top: 0; }
-
-  .vegan-note {
-    font-size: 0.72rem;
-    color: #6fcf97;
-    margin: -4px 0 10px 13px;
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 5px;
+    padding: clamp(32px, 8vw, 52px) clamp(16px, 5vw, 24px) clamp(40px, 10vw, 56px);
   }
+  .wrap { width: 100%; max-width: 480px; }
 
-  .item { display: flex; align-items: center; padding: clamp(10px, 3vw, 14px) 0; border-bottom: 0.5px solid var(--border); font-size: clamp(0.88rem, 3vw, 1rem); font-weight: 600; color: var(--text); }
-  .item:last-child { border-bottom: none; }
-  .item::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); opacity: 0.7; margin-right: 12px; flex-shrink: 0; }
+  .logo { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 9vw, 3.2rem); letter-spacing: 4px; text-align: center; color: var(--text); line-height: 1; font-variant-numeric: lining-nums; }
+  .logo-sub { font-size: clamp(0.62rem, 2vw, 0.75rem); letter-spacing: 5px; text-transform: uppercase; color: var(--muted); text-align: center; margin-top: 10px; }
+  .divider { width: 40px; height: 1px; background: #3a3a44; margin: 22px auto 28px; }
 
-  .jugos-wrap {
-    margin-top: 24px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--primary);
-    border-radius: 0 12px 12px 0;
-    padding: 14px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .jugos-icon { font-size: 1.4rem; flex-shrink: 0; }
-  .jugos-text strong { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: var(--primary); display: block; }
-  .jugos-text span { font-size: 0.75rem; color: var(--muted); margin-top: 2px; display: block; }
-
-  .footer { text-align: center; padding: 20px 24px 44px; border-top: 1px solid var(--border); max-width: 480px; margin: 0 auto; }
-  .footer-gold { color: var(--primary); font-size: 1rem; opacity: 0.6; margin-bottom: 10px; }
-  .location-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
-  .location-btn {
-    display: inline-flex; align-items: center; gap: 6px;
+  .grid { display: flex; flex-direction: column; gap: 14px; }
+  a.card {
+    display: flex; align-items: center; gap: 18px;
+    text-decoration: none; color: inherit;
     background: var(--card); border: 1px solid var(--border);
-    border-radius: 20px; padding: 8px 16px;
-    font-size: 0.78rem; color: var(--muted);
-    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+    border-radius: 16px; padding: clamp(14px, 4vw, 20px);
+    transition: transform 0.2s;
   }
-  .location-btn:hover { border-color: var(--primary); color: var(--text); }
-  .footer-hr { font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem; letter-spacing: 2px; color: var(--primary); margin-top: 12px; }
+  a.card:hover { transform: translateY(-2px); }
+  a.card:active { transform: scale(0.98); }
+  a.card.cafe   { border-left: 4px solid var(--cafe); }
+  a.card.fuente { border-left: 4px solid var(--fuente); }
+  .card-emoji { font-size: clamp(1.6rem, 5vw, 2rem); width: 44px; text-align: center; flex-shrink: 0; }
+  .card-body { flex: 1; }
+  .card-body strong { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.1rem, 4vw, 1.35rem); letter-spacing: 3px; display: block; }
+  a.card.cafe   .card-body strong { color: #e8b4b4; }
+  a.card.fuente .card-body strong { color: var(--fuente); }
+  .card-body span { font-size: clamp(0.72rem, 2.5vw, 0.8rem); color: var(--muted); margin-top: 3px; display: block; }
+  .card-arrow { font-size: 1rem; color: var(--border); flex-shrink: 0; }
 
-  .btn-back {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 0.85rem; letter-spacing: 3px;
-    color: var(--primary); text-decoration: none;
-    padding: 10px 0 0 24px;
-    opacity: 0.7; transition: opacity 0.2s;
-  }
-  .btn-back:hover { opacity: 1; }
-
-  .slider-wrap { position: relative; width: 100%; max-width: 480px; margin: 0 auto; border-radius: 0; overflow: hidden; aspect-ratio: 4/3; }
+  /* CARRUSEL */
+  .slider-wrap { position: relative; width: 100%; border-radius: 16px; overflow: hidden; margin-top: 28px; aspect-ratio: 4/3; }
   .slider-track { display: flex; height: 100%; transition: transform 0.5s ease; }
-  .slide { min-width: 100%; height: 100%; background-size: cover; background-position: center; }
-  .slider-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0; background: var(--bg); }
-  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); cursor: pointer; transition: background 0.2s; }
-  .dot.active { background: var(--primary); }
+  .slide {
+    min-width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 8px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: #3a3a44;
+  }
+  .slide:nth-child(1) { background: #1a1a20; }
+  .slide:nth-child(2) { background: #1a1510; }
+  .slide:nth-child(3) { background: #10181a; }
+  .slide-icon { font-size: 2rem; opacity: 0.25; }
+  .slide-label { opacity: 0.35; }
+.slider-btn:hover { background: rgba(0,0,0,0.8); }
+.slider-btn.next { right: 10px; }
+  .slider-dots { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: #3a3a44; cursor: pointer; transition: background 0.2s; }
+  .dot.active { background: var(--muted); }
+
+  /* FOOTER */
+  .footer { margin-top: 36px; text-align: center; }
+  .footer-hr { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: #4a4a56; margin-bottom: 8px; }
+  .location-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  a.location-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    color: var(--muted); text-decoration: none;
+    font-size: clamp(0.72rem, 2.5vw, 0.8rem);
+    transition: color 0.2s;
+  }
+  a.location-link:hover { color: var(--text); }
 </style>
 </head>
 <body>
+  <div class="wrap">
 
-<a class="btn-back" href="index.html">‹ Volver</a>
-<div class="hero">
-  <div class="logo">Órbita 300<span class="logo-line">Fuente</span></div>
-  <div class="logo-sub">Frutillar</div>
-  <div class="dline"></div>
-</div>
+    <div class="logo">Órbita 300</div>
+    <div class="logo-sub">Frutillar</div>
+    <div class="divider"></div>
 
-<div class="menu-wrap">
-
-  <div class="cat-label">Sándwiches & Completos</div>
-  <div class="vegan-note">🌱 Opciones veganas disponibles</div>
-  <div class="item">Completo</div>
-  <div class="item">Mechada</div>
-  <div class="item">Lomo</div>
-  <div class="item">Hamburguesa</div>
-  <div class="item">Churrasco</div>
-
-  <div class="cat-label">Hand Roll</div>
-  <div class="item">Camarón</div>
-  <div class="item">Pollo</div>
-
-  <div class="cat-label">Papas & Extras</div>
-  <div class="item">Papas fritas</div>
-  <div class="item">Salchipapa</div>
-  <div class="item">Papas con Nuggets</div>
-
-  <div class="jugos-wrap">
-    <div class="jugos-icon">🥤</div>
-    <div class="jugos-text">
-      <strong>Jugos naturales</strong>
-      <span>100% naturales · Sabores variados</span>
+    <div class="grid">
+      <a class="card cafe" href="cafe.html">
+        <span class="card-emoji">☕</span>
+        <div class="card-body">
+          <strong>Órbita Café</strong>
+          <span>Cafés, pastelería casera y jugos</span>
+        </div>
+        <span class="card-arrow">›</span>
+      </a>
+      <a class="card fuente" href="fuente.html">
+        <span class="card-emoji">🍔</span>
+        <div class="card-body">
+          <strong>Órbita Fuente</strong>
+          <span>Sándwiches, completos, papas y más</span>
+        </div>
+        <span class="card-arrow">›</span>
+      </a>
     </div>
+
+    <div class="slider-wrap">
+      <div class="slider-track" id="track">
+        <div class="slide" style="background-image:url('https://i.ibb.co/kfxTfN8/Muffins-1.jpg');background-size:cover;background-position:center"></div>
+        <div class="slide" style="position:relative;overflow:hidden">
+          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/35pSrNvw/fajita-1.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
+          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/35pSrNvw/fajita-1.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
+        </div>
+        <div class="slide" style="background-image:url('https://i.ibb.co/d4GJzmst/pie-de-limon-1.jpg');background-size:cover;background-position:center"></div>
+        <div class="slide" style="position:relative;overflow:hidden">
+          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/213THgFy/Completo-1.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
+          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/213THgFy/Completo-1.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
+        </div>
+        <div class="slide" style="background-image:url('https://i.ibb.co/BVPxChLW/pie-y-brownie-1.jpg');background-size:cover;background-position:center"></div>
+        <div class="slide" style="position:relative;overflow:hidden">
+          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/S7M9kp1x/Completo-2.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
+          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/S7M9kp1x/Completo-2.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
+        </div>
+        <div class="slide" style="background-image:url('https://i.ibb.co/BKjvf1L0/brownie-y-caf-1.jpg');background-size:cover;background-position:center"></div>
+        <div class="slide" style="position:relative;overflow:hidden">
+          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/v63HqGh6/Galletas-1.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
+          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/v63HqGh6/Galletas-1.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
+        </div>
+        <div class="slide" style="background-image:url('https://i.ibb.co/F4FVLv8j/pie-de-lim-n-y-caf-1.jpg');background-size:cover;background-position:center"></div>
+      </div>
+    </div>
+    <div class="slider-dots" id="dots">
+      <div class="dot active" onclick="irA(0)"></div>
+      <div class="dot" onclick="irA(1)"></div>
+      <div class="dot" onclick="irA(2)"></div>
+      <div class="dot" onclick="irA(3)"></div>
+      <div class="dot" onclick="irA(4)"></div>
+      <div class="dot" onclick="irA(5)"></div>
+      <div class="dot" onclick="irA(6)"></div>
+      <div class="dot" onclick="irA(7)"></div>
+      <div class="dot" onclick="irA(8)"></div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-hr">8:30 — 19:00 hrs</div>
+      <div class="location-label">¿Dónde nos ubicamos?</div>
+      <a class="location-link" href="https://maps.app.goo.gl/RQJpEevGV9xaCPWX9" target="_blank">
+        📍 Toca aquí para ubicarnos
+      </a>
+    </div>
+
   </div>
 
-</div>
-
-<div class="slider-wrap">
-  <div class="slider-track" id="track">
-    <div class="slide" style="position:relative;overflow:hidden">
-      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/35pSrNvw/fajita-1.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
-      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/35pSrNvw/fajita-1.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
-    </div>
-    <div class="slide" style="position:relative;overflow:hidden">
-      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/213THgFy/Completo-1.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
-      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/213THgFy/Completo-1.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
-    </div>
-    <div class="slide" style="position:relative;overflow:hidden">
-      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/S7M9kp1x/Completo-2.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
-      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/S7M9kp1x/Completo-2.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
-    </div>
-  </div>
-</div>
-<div class="slider-dots" id="dots">
-  <div class="dot active" onclick="irA(0)"></div>
-  <div class="dot" onclick="irA(1)"></div>
-  <div class="dot" onclick="irA(2)"></div>
-</div>
-
-<div class="footer">
-  <div class="footer-gold">✦</div>
-  <div class="location-label">¿Dónde nos ubicamos?</div>
-  <a class="location-btn" href="https://maps.app.goo.gl/RQJpEevGV9xaCPWX9" target="_blank">
-    📍 Toca aquí para ubicarnos
-  </a>
-  <div class="footer-hr">8:30 — 19:00 hrs</div>
-</div>
-
-<script>
+  <script>
   let actual = 0;
-  const total = 3;
+  const total = 9;
   const track = document.getElementById('track');
   const dots = document.querySelectorAll('.dot');
 
