@@ -143,9 +143,18 @@
 
 <div class="slider-wrap">
   <div class="slider-track" id="track">
-    <div class="slide" style="background-image:url('https://i.ibb.co/35pSrNvw/fajita-1.jpg');background-size:cover;background-position:center"></div>
-    <div class="slide" style="background-image:url('https://i.ibb.co/213THgFy/Completo-1.jpg');background-size:cover;background-position:center"></div>
-    <div class="slide" style="background-image:url('https://i.ibb.co/S7M9kp1x/Completo-2.jpg');background-size:cover;background-position:center"></div>
+    <div class="slide" style="position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/35pSrNvw/fajita-1.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
+      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/35pSrNvw/fajita-1.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
+    </div>
+    <div class="slide" style="position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/213THgFy/Completo-1.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
+      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/213THgFy/Completo-1.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
+    </div>
+    <div class="slide" style="position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/S7M9kp1x/Completo-2.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
+      <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/S7M9kp1x/Completo-2.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
+    </div>
   </div>
 </div>
 <div class="slider-dots" id="dots">
