@@ -11,7 +11,7 @@
 <meta property="og:image" content="https://i.ibb.co/nqkMR2b8/Logo-rbita-300-removebg-preview.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg:     #08080a;
@@ -23,6 +23,7 @@
     --fuente: #D4872A;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   body {
     min-height: 100vh;
     font-family: 'DM Sans', sans-serif;
@@ -31,60 +32,135 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: clamp(32px, 8vw, 52px) clamp(16px, 5vw, 24px) clamp(40px, 10vw, 56px);
+    padding: clamp(32px, 8vw, 52px) clamp(12px, 4vw, 20px) clamp(40px, 10vw, 56px);
   }
-  .wrap { width: 100%; max-width: 480px; }
 
-  .logo { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 9vw, 3.2rem); letter-spacing: 4px; text-align: center; color: var(--text); line-height: 1; font-variant-numeric: lining-nums; }
+  .wrap { width: 100%; max-width: 520px; }
+
+  /* LOGO */
+  .logo { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 9vw, 3.2rem); letter-spacing: 4px; text-align: center; color: var(--text); line-height: 1; }
   .logo-sub { font-size: clamp(0.62rem, 2vw, 0.75rem); letter-spacing: 5px; text-transform: uppercase; color: var(--muted); text-align: center; margin-top: 10px; }
   .divider { width: 40px; height: 1px; background: #3a3a44; margin: 22px auto 28px; }
 
-  .grid { display: flex; flex-direction: column; gap: 14px; }
+  /* 3-COLUMN LAYOUT */
+  .three-col {
+    display: grid;
+    grid-template-columns: 72px 1fr 72px;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  /* CARRUSELES LATERALES */
+  .slider-col {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .slider-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid;
+  }
+  .slider-label.cafe-label   { color: #e8b4b4; border-color: var(--cafe); }
+  .slider-label.fuente-label { color: var(--fuente); border-color: var(--fuente); }
+
+  .slider-wrap {
+    flex: 1;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 180px;
+    background: #111115;
+  }
+  .slider-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+  }
+  .slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+  }
+  .slide-contain {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .slide-contain .bg-blur {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    filter: blur(12px) brightness(0.4);
+    transform: scale(1.1);
+  }
+  .slide-contain .bg-fit {
+    position: absolute; inset: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: #3a3a44;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .dot.active { background: var(--muted); }
+
+  /* CARDS CENTRALES */
+  .center-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
   a.card {
-    display: flex; align-items: center; gap: 18px;
+    display: flex; align-items: center; gap: 14px;
     text-decoration: none; color: inherit;
     background: var(--card); border: 1px solid var(--border);
-    border-radius: 16px; padding: clamp(14px, 4vw, 20px);
+    border-radius: 14px; padding: clamp(14px, 4vw, 18px);
     transition: transform 0.2s;
+    flex: 1;
   }
-  a.card:hover { transform: translateY(-2px); }
+  a.card:hover  { transform: translateY(-2px); }
   a.card:active { transform: scale(0.98); }
   a.card.cafe   { border-left: 4px solid var(--cafe); }
   a.card.fuente { border-left: 4px solid var(--fuente); }
-  .card-emoji { font-size: clamp(1.6rem, 5vw, 2rem); width: 44px; text-align: center; flex-shrink: 0; }
-  .card-body { flex: 1; }
-  .card-body strong { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.1rem, 4vw, 1.35rem); letter-spacing: 3px; display: block; }
+
+  .card-emoji { font-size: clamp(1.4rem, 4vw, 1.8rem); width: 38px; text-align: center; flex-shrink: 0; }
+  .card-body  { flex: 1; min-width: 0; }
+  .card-body strong {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    letter-spacing: 3px; display: block;
+  }
   a.card.cafe   .card-body strong { color: #e8b4b4; }
   a.card.fuente .card-body strong { color: var(--fuente); }
-  .card-body span { font-size: clamp(0.72rem, 2.5vw, 0.8rem); color: var(--muted); margin-top: 3px; display: block; }
+  .card-body span {
+    font-size: clamp(0.65rem, 2vw, 0.75rem);
+    color: var(--muted); margin-top: 3px; display: block;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
   .card-arrow { font-size: 1rem; color: var(--border); flex-shrink: 0; }
 
-  /* CARRUSEL */
-  .slider-wrap { position: relative; width: 100%; border-radius: 16px; overflow: hidden; margin-top: 28px; aspect-ratio: 4/3; }
-  .slider-track { display: flex; height: 100%; transition: transform 0.5s ease; }
-  .slide {
-    min-width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 8px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    color: #3a3a44;
-  }
-  .slide:nth-child(1) { background: #1a1a20; }
-  .slide:nth-child(2) { background: #1a1510; }
-  .slide:nth-child(3) { background: #10181a; }
-  .slide-icon { font-size: 2rem; opacity: 0.25; }
-  .slide-label { opacity: 0.35; }
-.slider-btn:hover { background: rgba(0,0,0,0.8); }
-.slider-btn.next { right: 10px; }
-  .slider-dots { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
-  .dot { width: 6px; height: 6px; border-radius: 50%; background: #3a3a44; cursor: pointer; transition: background 0.2s; }
-  .dot.active { background: var(--muted); }
-
   /* FOOTER */
-  .footer { margin-top: 36px; text-align: center; }
+  .footer { margin-top: 32px; text-align: center; }
   .footer-hr { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: #4a4a56; margin-bottom: 8px; }
   .location-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
   a.location-link {
@@ -97,18 +173,42 @@
 </style>
 </head>
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <div class="logo">Órbita 300</div>
-    <div class="logo-sub">Frutillar</div>
-    <div class="divider"></div>
+  <div class="logo">Órbita 300</div>
+  <div class="logo-sub">Frutillar</div>
+  <div class="divider"></div>
 
-    <div class="grid">
+  <div class="three-col">
+
+    <!-- CARRUSEL IZQUIERDA — Pastelería -->
+    <div class="slider-col">
+      <div class="slider-label cafe-label">Pastelería</div>
+      <div class="slider-wrap">
+        <div class="slider-track" id="track-cafe">
+          <div class="slide" style="background-image:url('https://i.ibb.co/kfxTfN8/Muffins-1.jpg')"></div>
+          <div class="slide" style="background-image:url('https://i.ibb.co/d4GJzmst/pie-de-limon-1.jpg')"></div>
+          <div class="slide" style="background-image:url('https://i.ibb.co/BVPxChLW/pie-y-brownie-1.jpg')"></div>
+          <div class="slide" style="background-image:url('https://i.ibb.co/BKjvf1L0/brownie-y-caf-1.jpg')"></div>
+          <div class="slide" style="background-image:url('https://i.ibb.co/F4FVLv8j/pie-de-lim-n-y-caf-1.jpg')"></div>
+        </div>
+      </div>
+      <div class="slider-dots" id="dots-cafe">
+        <div class="dot active" onclick="irA('cafe',0)"></div>
+        <div class="dot" onclick="irA('cafe',1)"></div>
+        <div class="dot" onclick="irA('cafe',2)"></div>
+        <div class="dot" onclick="irA('cafe',3)"></div>
+        <div class="dot" onclick="irA('cafe',4)"></div>
+      </div>
+    </div>
+
+    <!-- CARDS CENTRO -->
+    <div class="center-col">
       <a class="card cafe" href="cafe.html">
         <span class="card-emoji">☕</span>
         <div class="card-body">
           <strong>Órbita Café</strong>
-          <span>Cafés, pastelería casera y jugos</span>
+          <span>Cafés, pastelería y jugos</span>
         </div>
         <span class="card-arrow">›</span>
       </a>
@@ -116,89 +216,97 @@
         <span class="card-emoji">🍔</span>
         <div class="card-body">
           <strong>Órbita Fuente</strong>
-          <span>Sándwiches, completos, papas y más</span>
+          <span>Sándwiches, completos y más</span>
         </div>
         <span class="card-arrow">›</span>
       </a>
     </div>
 
-    <div class="slider-wrap">
-      <div class="slider-track" id="track">
-        <div class="slide" style="background-image:url('https://i.ibb.co/kfxTfN8/Muffins-1.jpg');background-size:cover;background-position:center"></div>
-        <div class="slide" style="position:relative;overflow:hidden">
-          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/35pSrNvw/fajita-1.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
-          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/35pSrNvw/fajita-1.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
+    <!-- CARRUSEL DERECHA — Fuente -->
+    <div class="slider-col">
+      <div class="slider-label fuente-label">Fuente</div>
+      <div class="slider-wrap">
+        <div class="slider-track" id="track-fuente">
+          <div class="slide-contain">
+            <div class="bg-blur" style="background-image:url('https://i.ibb.co/35pSrNvw/fajita-1.jpg')"></div>
+            <div class="bg-fit"  style="background-image:url('https://i.ibb.co/35pSrNvw/fajita-1.jpg')"></div>
+          </div>
+          <div class="slide-contain">
+            <div class="bg-blur" style="background-image:url('https://i.ibb.co/213THgFy/Completo-1.jpg')"></div>
+            <div class="bg-fit"  style="background-image:url('https://i.ibb.co/213THgFy/Completo-1.jpg')"></div>
+          </div>
+          <div class="slide-contain">
+            <div class="bg-blur" style="background-image:url('https://i.ibb.co/S7M9kp1x/Completo-2.jpg')"></div>
+            <div class="bg-fit"  style="background-image:url('https://i.ibb.co/S7M9kp1x/Completo-2.jpg')"></div>
+          </div>
+          <div class="slide-contain">
+            <div class="bg-blur" style="background-image:url('https://i.ibb.co/v63HqGh6/Galletas-1.jpg')"></div>
+            <div class="bg-fit"  style="background-image:url('https://i.ibb.co/v63HqGh6/Galletas-1.jpg')"></div>
+          </div>
         </div>
-        <div class="slide" style="background-image:url('https://i.ibb.co/d4GJzmst/pie-de-limon-1.jpg');background-size:cover;background-position:center"></div>
-        <div class="slide" style="position:relative;overflow:hidden">
-          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/213THgFy/Completo-1.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
-          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/213THgFy/Completo-1.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
-        </div>
-        <div class="slide" style="background-image:url('https://i.ibb.co/BVPxChLW/pie-y-brownie-1.jpg');background-size:cover;background-position:center"></div>
-        <div class="slide" style="position:relative;overflow:hidden">
-          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/S7M9kp1x/Completo-2.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
-          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/S7M9kp1x/Completo-2.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
-        </div>
-        <div class="slide" style="background-image:url('https://i.ibb.co/BKjvf1L0/brownie-y-caf-1.jpg');background-size:cover;background-position:center"></div>
-        <div class="slide" style="position:relative;overflow:hidden">
-          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/v63HqGh6/Galletas-1.jpg');background-size:cover;background-position:center;filter:blur(14px) brightness(0.5);transform:scale(1.1)"></div>
-          <div style="position:absolute;inset:0;background-image:url('https://i.ibb.co/v63HqGh6/Galletas-1.jpg');background-size:contain;background-position:center;background-repeat:no-repeat"></div>
-        </div>
-        <div class="slide" style="background-image:url('https://i.ibb.co/F4FVLv8j/pie-de-lim-n-y-caf-1.jpg');background-size:cover;background-position:center"></div>
       </div>
-    </div>
-    <div class="slider-dots" id="dots">
-      <div class="dot active" onclick="irA(0)"></div>
-      <div class="dot" onclick="irA(1)"></div>
-      <div class="dot" onclick="irA(2)"></div>
-      <div class="dot" onclick="irA(3)"></div>
-      <div class="dot" onclick="irA(4)"></div>
-      <div class="dot" onclick="irA(5)"></div>
-      <div class="dot" onclick="irA(6)"></div>
-      <div class="dot" onclick="irA(7)"></div>
-      <div class="dot" onclick="irA(8)"></div>
-    </div>
-
-    <div class="footer">
-      <div class="footer-hr">8:30 — 19:00 hrs</div>
-      <div class="location-label">¿Dónde nos ubicamos?</div>
-      <a class="location-link" href="https://maps.app.goo.gl/RQJpEevGV9xaCPWX9" target="_blank">
-        📍 Toca aquí para ubicarnos
-      </a>
+      <div class="slider-dots" id="dots-fuente">
+        <div class="dot active" onclick="irA('fuente',0)"></div>
+        <div class="dot" onclick="irA('fuente',1)"></div>
+        <div class="dot" onclick="irA('fuente',2)"></div>
+        <div class="dot" onclick="irA('fuente',3)"></div>
+      </div>
     </div>
 
   </div>
 
-  <script>
-  let actual = 0;
-  const total = 9;
-  const track = document.getElementById('track');
-  const dots = document.querySelectorAll('.dot');
+  <div class="footer">
+    <div class="footer-hr">8:30 — 19:00 hrs</div>
+    <div class="location-label">¿Dónde nos ubicamos?</div>
+    <a class="location-link" href="https://maps.app.goo.gl/RQJpEevGV9xaCPWX9" target="_blank">
+      📍 Toca aquí para ubicarnos
+    </a>
+  </div>
 
-  function irA(n) {
-    actual = (n + total) % total;
-    track.style.transform = `translateX(-${actual * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle('active', i === actual));
+</div>
+
+<script>
+  const sliders = {
+    cafe:   { actual: 0, total: 5 },
+    fuente: { actual: 0, total: 4 }
+  };
+
+  function irA(id, n) {
+    const s = sliders[id];
+    s.actual = (n + s.total) % s.total;
+    const track = document.getElementById('track-' + id);
+    track.style.transform = `translateX(-${s.actual * 100}%)`;
+    document.querySelectorAll('#dots-' + id + ' .dot').forEach((d, i) => {
+      d.classList.toggle('active', i === s.actual);
+    });
   }
 
-  let timer = setInterval(() => mover(1), 4000);
-
-  function mover(dir) {
-    clearInterval(timer);
-    irA(actual + dir);
-    timer = setInterval(() => mover(1), 4000);
+  function mover(id, dir) {
+    irA(id, sliders[id].actual + dir);
   }
 
-  // Swipe táctil
-  let startX = 0;
-  track.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-  }, { passive: true });
+  setInterval(() => mover('cafe',   1), 3800);
+  setInterval(() => mover('fuente', 1), 4300);
 
-  track.addEventListener('touchend', e => {
-    const diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) mover(diff > 0 ? 1 : -1);
-  }, { passive: true });
+  ['cafe', 'fuente'].forEach(id => {
+    let startX = 0;
+    const track = document.getElementById('track-' + id);
+    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend',   e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) mover(id, diff > 0 ? 1 : -1);
+    }, { passive: true });
+  });
+
+  // Altura mínima igual en ambos slider-wrap
+  function igualarAlturas() {
+    const wraps = document.querySelectorAll('.slider-wrap');
+    wraps.forEach(w => w.style.minHeight = '');
+    const h = Math.max(...[...wraps].map(w => w.offsetHeight));
+    wraps.forEach(w => w.style.minHeight = h + 'px');
+  }
+  window.addEventListener('load', igualarAlturas);
+  window.addEventListener('resize', igualarAlturas);
 </script>
 </body>
 </html>
