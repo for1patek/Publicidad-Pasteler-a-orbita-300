@@ -33,12 +33,12 @@
   .menu-wrap { max-width: 480px; margin: 0 auto; padding: clamp(20px, 5vw, 28px) clamp(18px, 5vw, 28px) 40px; }
 
   .delivery-badge {
-    display: flex; align-items: center; justify-content: center; gap: 10px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
     background: var(--card); border: 1px solid var(--border);
     border-radius: 12px; padding: 12px 20px; margin-bottom: 28px;
-    font-size: clamp(0.78rem, 2.5vw, 0.88rem); color: var(--muted);
+    font-size: 0.84rem; color: var(--muted); white-space: nowrap;
   }
-  .delivery-badge .icon { font-size: 1.2rem; }
+  .delivery-badge .icon { font-size: 1.2rem; flex-shrink: 0; }
   .delivery-badge strong { color: var(--primary); }
 
   .cat-label {
@@ -62,7 +62,7 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: clamp(10px, 3vw, 14px) 0;
     border-bottom: 0.5px solid var(--border);
-    font-size: clamp(0.88rem, 3vw, 1rem);
+    font-size: 0.95rem;
   }
   .item:last-child { border-bottom: none; }
 
@@ -88,15 +88,14 @@
   .contact-btns { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 
   .contact-btn {
-    display: inline-flex; align-items: center; gap: 8px;
+    display: inline-flex; align-items: center; justify-content: center;
     border: 1px solid var(--border);
-    border-radius: 20px; padding: 8px 16px;
-    font-size: 0.78rem; color: var(--muted);
-    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+    border-radius: 50%; padding: 10px;
+    text-decoration: none; transition: border-color 0.2s;
     background: white;
   }
-  .contact-btn:hover { border-color: var(--primary); color: var(--primary); }
-  .contact-btn svg { flex-shrink: 0; }
+  .contact-btn:hover { border-color: var(--primary); }
+  .contact-btn svg { flex-shrink: 0; width: 26px; height: 26px; }
 
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
@@ -116,7 +115,7 @@
 
   <div class="delivery-badge">
     <span class="icon">🛵</span>
-    Delivery · <strong>$2.000</strong> · Gratis sobre compras de <strong>$6.000</strong>
+    Delivery · <strong>$2.000</strong> · Gratis sobre <strong>$6.000</strong>
   </div>
 
   <div class="cat-label">Por unidad / trozo</div>
@@ -192,7 +191,7 @@
   <div class="contact-btns">
 
     <!-- WhatsApp -->
-    <a class="contact-btn" href="https://wa.me/56XXXXXXXXX" target="_blank">
+    <a class="contact-btn" href="https://wa.me/56971019691" target="_blank">
       <!-- Logo oficial WhatsApp -->
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48">
         <radialGradient id="wag" cx="11.987" cy="44.637" r="44.222" gradientUnits="userSpaceOnUse">
@@ -202,7 +201,6 @@
         <path fill="url(#wag)" d="M24 4C13 4 4 13 4 24c0 3.7 1 7.1 2.8 10.1L4 44l10.2-2.7C17.1 43 20.5 44 24 44c11 0 20-9 20-20S35 4 24 4z"/>
         <path fill="#fff" d="M34.5 29.2c-.5-.3-3-1.5-3.5-1.7-.5-.2-.8-.3-1.1.2s-1.3 1.7-1.6 2c-.3.4-.6.4-1.1.1-3-1.5-5-2.7-6.9-6.1-.5-.9.5-.8 1.5-2.8.2-.4.1-.7-.1-1-.2-.3-1.1-2.6-1.5-3.6-.4-.9-.8-.8-1.1-.8h-.9c-.3 0-.8.1-1.2.6-.4.5-1.6 1.5-1.6 3.8s1.6 4.4 1.8 4.7c.2.3 3.2 4.9 7.7 6.8 4.6 1.9 4.6 1.3 5.4 1.2.8-.1 2.6-1.1 3-2.1.4-1 .4-1.9.3-2.1-.1-.1-.4-.2-.9-.5z"/>
       </svg>
-      +56 9 71019691
     </a>
 
     <!-- Instagram -->
@@ -227,7 +225,6 @@
         <path fill="#fff" d="M24 31c-3.859 0-7-3.14-7-7s3.141-7 7-7 7 3.14 7 7-3.141 7-7 7zm0-12c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zM31 24h2v2h-2zm1-7h-1v-1h1zm0 2v-1h1v1zm2 0h-1v-1h1zm-1-1h-1v-1h1zm-1-1h-1v-1h1zm-1 0v1h-1v-1zm0-2h1v1h-1zm1 1v-1h1v1zm-17 1c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V18c0-1.1-.9-2-2-2H16zm16 14H16V18h16v12z"/>
         <circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/>
       </svg>
-      @orbita300frutillar
     </a>
 
   </div>
