@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Órbita 300 · Pastelería Casera</title>
+<link rel="icon" type="image/png" href="https://i.ibb.co/nqkMR2b8/Logo-rbita-300-removebg-preview.png">
+<link rel="apple-touch-icon" href="https://i.ibb.co/nqkMR2b8/Logo-rbita-300-removebg-preview.png">
+<meta property="og:title" content="Órbita 300 · Pastelería Casera">
+<meta property="og:description" content="Pastelería casera con delivery en Frutillar.">
+<meta property="og:image" content="https://i.ibb.co/nqkMR2b8/Logo-rbita-300-removebg-preview.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #8B1A1A;
+    --bg:      #FAF3E0;
+    --card:    #FFF8EE;
+    --border:  #E8D5B0;
+    --text:    #1A1A1A;
+    --muted:   #7A6040;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; }
+
+  .hero { border-bottom: 3px solid var(--primary); padding: clamp(32px, 8vw, 48px) 24px clamp(24px, 6vw, 36px); text-align: center; }
+  .logo { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 8vw, 2.8rem); letter-spacing: 3px; color: var(--primary); line-height: 1; }
+  .logo-line { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 4vw, 1.5rem); font-style: italic; font-weight: 500; letter-spacing: 5px; color: var(--muted); margin-left: 10px; vertical-align: middle; }
+  .logo-sub { font-size: clamp(0.65rem, 2vw, 0.78rem); letter-spacing: 5px; text-transform: uppercase; color: var(--primary); margin-top: 8px; }
+  .dline { width: 48px; height: 1px; background: var(--primary); opacity: 0.4; margin: 18px auto 0; }
+
+  .menu-wrap { max-width: 480px; margin: 0 auto; padding: clamp(20px, 5vw, 28px) clamp(18px, 5vw, 28px) 40px; }
+
+  .delivery-badge {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 20px; margin-bottom: 28px;
+    font-size: clamp(0.78rem, 2.5vw, 0.88rem); color: var(--muted);
+  }
+  .delivery-badge .icon { font-size: 1.2rem; }
+  .delivery-badge strong { color: var(--primary); }
+
+  .cat-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    letter-spacing: 4px;
+    color: var(--primary);
+    border-left: 3px solid var(--primary);
+    padding-left: 10px;
+    margin: 28px 0 6px;
+  }
+  .cat-label:first-of-type { margin-top: 0; }
+
+  .cat-note {
+    font-size: clamp(0.72rem, 2vw, 0.8rem);
+    color: var(--muted); font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: clamp(10px, 3vw, 14px) 0;
+    border-bottom: 0.5px solid var(--border);
+    font-size: clamp(0.88rem, 3vw, 1rem);
+  }
+  .item:last-child { border-bottom: none; }
+
+  .item-left { display: flex; align-items: center; gap: 12px; }
+  .item-left::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+
+  .item-name { font-weight: 600; color: var(--text); }
+  .item-qty { font-size: clamp(0.7rem, 2vw, 0.78rem); color: var(--muted); margin-left: 6px; font-weight: 400; }
+  .item-price { font-weight: 600; color: var(--primary); white-space: nowrap; }
+
+  .footer { text-align: center; padding: 20px 24px 44px; border-top: 1px solid var(--border); max-width: 480px; margin: 0 auto; }
+  .footer-gold { color: var(--primary); font-size: 1rem; opacity: 0.4; margin-bottom: 10px; }
+  .footer-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
+  .ig-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: white; border: 1px solid var(--border);
+    border-radius: 20px; padding: 8px 16px;
+    font-size: 0.78rem; color: var(--muted);
+    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+  }
+  .ig-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="logo">Órbita 300<span class="logo-line">Pastelería</span></div>
+  <div class="logo-sub">Frutillar</div>
+  <div class="dline"></div>
+</div>
+
+<div class="menu-wrap">
+
+  <div class="delivery-badge">
+    <span class="icon">🛵</span>
+    Delivery disponible · <strong>$2.000</strong> · Gratis sobre <strong>$6.000</strong>
+  </div>
+
+  <div class="cat-label">Por unidad / trozo</div>
+
+  <div class="item">
+    <div class="item-left"><span class="item-name">Brownie</span></div>
+    <span class="item-price">$2.000</span>
+  </div>
+  <div class="item">
+    <div class="item-left"><span class="item-name">Pie de Limón</span></div>
+    <span class="item-price">$2.500</span>
+  </div>
+  <div class="item">
+    <div class="item-left"><span class="item-name">Muffin Zanahoria</span></div>
+    <span class="item-price">$1.000</span>
+  </div>
+  <div class="item">
+    <div class="item-left"><span class="item-name">Muffin Chocolate</span></div>
+    <span class="item-price">$1.200</span>
+  </div>
+
+  <div class="cat-label">Entero</div>
+  <div class="cat-note">Ideal para eventos y regalos 🎁</div>
+
+  <div class="item">
+    <div class="item-left">
+      <span class="item-name">Brownie<span class="item-qty">(10 trozos)</span></span>
+    </div>
+    <span class="item-price">$16.000</span>
+  </div>
+  <div class="item">
+    <div class="item-left">
+      <span class="item-name">Pie de Limón<span class="item-qty">(8 trozos)</span></span>
+    </div>
+    <span class="item-price">$19.000</span>
+  </div>
+  <div class="item">
+    <div class="item-left">
+      <span class="item-name">Muffin Zanahoria<span class="item-qty">(12 u)</span></span>
+    </div>
+    <span class="item-price">$10.000</span>
+  </div>
+  <div class="item">
+    <div class="item-left">
+      <span class="item-name">Muffin Chocolate<span class="item-qty">(12 u)</span></span>
+    </div>
+    <span class="item-price">$11.000</span>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-gold">✦</div>
+  <div class="footer-label">Pedidos e información</div>
+  <a class="ig-btn" href="https://www.instagram.com/orbita300frutillar?igsh=MWIwM3NidGZmazdtbw==" target="_blank">
+    📸 @orbita300frutillar
+  </a>
+</div>
+
+</body>
+</html>
