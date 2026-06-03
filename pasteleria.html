@@ -73,6 +73,13 @@
   .item-qty { font-size: clamp(0.7rem, 2vw, 0.78rem); color: var(--muted); margin-left: 6px; font-weight: 400; }
   .item-price { font-weight: 600; color: var(--primary); white-space: nowrap; }
 
+  .slider-wrap { position: relative; width: 100%; max-width: 480px; margin: 0 auto; overflow: hidden; aspect-ratio: 4/3; }
+  .slider-track { display: flex; height: 100%; transition: transform 0.5s ease; }
+  .slide { min-width: 100%; height: 100%; background-size: cover; background-position: center; }
+  .slider-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0; background: var(--bg); }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); cursor: pointer; transition: background 0.2s; }
+  .dot.active { background: var(--primary); }
+
   .footer { text-align: center; padding: 20px 24px 44px; border-top: 1px solid var(--border); max-width: 480px; margin: 0 auto; }
   .footer-gold { color: var(--primary); font-size: 1rem; opacity: 0.4; margin-bottom: 10px; }
   .footer-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
@@ -103,7 +110,7 @@
 
   <div class="delivery-badge">
     <span class="icon">🛵</span>
-    Delivery disponible · <strong>$2.000</strong> · Gratis sobre <strong>$6.000</strong>
+    Delivery · <strong>$2.000</strong> · Gratis sobre <strong>$6.000</strong>
   </div>
 
   <div class="cat-label">Por unidad / trozo</div>
@@ -155,6 +162,23 @@
 
 </div>
 
+<div class="slider-wrap">
+  <div class="slider-track" id="track">
+    <div class="slide" style="background-image:url('https://i.ibb.co/kfxTfN8/Muffins-1.jpg')"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/d4GJzmst/pie-de-limon-1.jpg')"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/BVPxChLW/pie-y-brownie-1.jpg')"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/BKjvf1L0/brownie-y-caf-1.jpg')"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/F4FVLv8j/pie-de-lim-n-y-caf-1.jpg')"></div>
+  </div>
+</div>
+<div class="slider-dots" id="dots">
+  <div class="dot active" onclick="irA(0)"></div>
+  <div class="dot" onclick="irA(1)"></div>
+  <div class="dot" onclick="irA(2)"></div>
+  <div class="dot" onclick="irA(3)"></div>
+  <div class="dot" onclick="irA(4)"></div>
+</div>
+
 <div class="footer">
   <div class="footer-gold">✦</div>
   <div class="footer-label">Pedidos e información</div>
@@ -163,5 +187,32 @@
   </a>
 </div>
 
+<script>
+  let actual = 0;
+  const total = 5;
+  const track = document.getElementById('track');
+  const dots = document.querySelectorAll('.dot');
+
+  function irA(n) {
+    actual = (n + total) % total;
+    track.style.transform = `translateX(-${actual * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === actual));
+  }
+
+  let timer = setInterval(() => mover(1), 4000);
+
+  function mover(dir) {
+    clearInterval(timer);
+    irA(actual + dir);
+    timer = setInterval(() => mover(1), 4000);
+  }
+
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) mover(diff > 0 ? 1 : -1);
+  }, { passive: true });
+</script>
 </body>
 </html>
