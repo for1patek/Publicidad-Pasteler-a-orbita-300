@@ -21,6 +21,7 @@
     --text:   #f0f0f5;
     --cafe:   #8B1A1A;
     --fuente: #D4872A;
+    --life:   #2D6A4F;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -51,11 +52,13 @@
   a.card:active { transform: scale(0.98); }
   a.card.cafe   { border-left: 4px solid var(--cafe); }
   a.card.fuente { border-left: 4px solid var(--fuente); }
+  a.card.life   { border-left: 4px solid var(--life); }
   .card-emoji { font-size: clamp(1.6rem, 5vw, 2rem); width: 44px; text-align: center; flex-shrink: 0; }
   .card-body { flex: 1; }
   .card-body strong { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.1rem, 4vw, 1.35rem); letter-spacing: 3px; display: block; }
   a.card.cafe   .card-body strong { color: #e8b4b4; }
   a.card.fuente .card-body strong { color: var(--fuente); }
+  a.card.life   .card-body strong { color: #52B788; }
   .card-body span { font-size: clamp(0.72rem, 2.5vw, 0.8rem); color: var(--muted); margin-top: 3px; display: block; }
   .card-arrow { font-size: 1rem; color: var(--border); flex-shrink: 0; }
 
@@ -120,6 +123,14 @@
         </div>
         <span class="card-arrow">›</span>
       </a>
+      <a class="card life" href="life.html">
+        <span class="card-emoji">🌿</span>
+        <div class="card-body">
+          <strong>Órbita Life</strong>
+          <span>Batidos proteícos y de entrenamiento</span>
+        </div>
+        <span class="card-arrow">›</span>
+      </a>
     </div>
 
     <div class="slider-wrap">
@@ -160,6 +171,7 @@
     </div>
 
     <div class="footer">
+      <div class="footer-hr">8:30 — 19:00 hrs</div>
       <div class="location-label">¿Dónde nos ubicamos?</div>
       <a class="location-link" href="https://maps.app.goo.gl/RQJpEevGV9xaCPWX9" target="_blank">
         📍 Toca aquí para ubicarnos
