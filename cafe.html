@@ -11,7 +11,7 @@
 <meta property="og:image" content="https://i.ibb.co/nqkMR2b8/Logo-rbita-300-removebg-preview.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600&family=Lora:ital,wght@1,700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 <style>
   :root {
     --primary: #8B1A1A;
@@ -22,15 +22,15 @@
     --muted:   #7A6040;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; padding: 0 0px; }
 
-  .hero { border-bottom: 3px solid var(--primary); padding: clamp(32px, 8vw, 48px) 24px clamp(24px, 6vw, 36px); text-align: center; }
+  .hero { border-bottom: 3px solid var(--primary); padding: clamp(32px, 8vw, 48px) 24px clamp(28px, 7vw, 42px); text-align: center; }
   .logo { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 8vw, 2.8rem); letter-spacing: 3px; color: var(--primary); line-height: 1; font-variant-numeric: lining-nums; }
   .logo-line { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 4vw, 1.5rem); font-style: italic; font-weight: 500; letter-spacing: 5px; color: var(--muted); margin-left: 10px; vertical-align: middle; }
   .logo-sub { font-size: clamp(0.65rem, 2vw, 0.78rem); letter-spacing: 5px; text-transform: uppercase; color: var(--primary); margin-top: 8px; }
   .dline { width: 48px; height: 1px; background: var(--primary); margin: 18px auto 0; }
 
-  .menu-wrap { max-width: 480px; margin: 0 auto; padding: clamp(20px, 5vw, 28px) clamp(18px, 5vw, 28px) 40px; }
+  .menu-wrap { max-width: 480px; margin: 0 auto; padding: clamp(20px, 5vw, 28px) 32px 40px; }
 
   .cat-label {
     font-family: 'Bebas Neue', sans-serif;
@@ -97,6 +97,34 @@
   .contact-btn { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: white; border: 1px solid var(--border); transition: transform .2s; }
   .contact-btn:hover { transform: scale(1.1); }
   .contact-btn svg { width: 26px; height: 26px; }
+
+  .blu-line {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+  .blu-num {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 700;
+    color: #8e44ad;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  .blu-rest {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.7rem;
+    font-style: italic;
+    font-weight: 700;
+    color: #8e44ad;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  .blu-logo { height: 22px; width: auto; vertical-align: middle; }
 </style>
 </head>
 <body>
@@ -106,9 +134,15 @@
   <div class="logo">Órbita 300<span class="logo-line">Café</span></div>
   <div class="logo-sub">Frutillar</div>
   <div class="dline"></div>
+<div class="blu-line">
+  <span class="blu-num">10</span>
+  <span class="blu-rest">% OFF para clientes</span>
+  <img class="blu-logo" src="https://i.ibb.co/KpJS0brN/Logo-Blu-Morado.png" alt="Blu">
+</div>
 </div>
 
 <div class="menu-wrap">
+</div>
 
   <div class="cat-label">Cafés</div>
   <div class="item">Espresso</div>
