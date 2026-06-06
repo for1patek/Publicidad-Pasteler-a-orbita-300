@@ -45,9 +45,12 @@
   }
   .cat-label:first-child { margin-top: 0; }
 
-  .item { display: flex; align-items: center; padding: clamp(10px, 3vw, 14px) 0; border-bottom: 0.5px solid var(--border); font-size: clamp(0.88rem, 3vw, 1rem); font-weight: 600; color: var(--text); }
+  .item { display: flex; align-items: flex-start; gap: 10px; padding: clamp(10px, 3vw, 14px) 0; border-bottom: 0.5px solid var(--border); }
   .item:last-child { border-bottom: none; }
-  .item::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: 12px; flex-shrink: 0; }
+  .item::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
+  .item-body { display: flex; flex-direction: column; gap: 2px; }
+  .item-nombre { font-size: clamp(0.95rem, 3vw, 1.05rem); font-weight: 700; color: var(--text); }
+  .item-desc { font-size: clamp(0.75rem, 2.5vw, 0.82rem); color: var(--muted); font-style: italic; }
 
   .slider-wrap { position: relative; width: 100%; max-width: 480px; margin: 0 auto; overflow: hidden; aspect-ratio: 4/3; }
   .slider-track { display: flex; height: 100%; transition: transform 0.5s ease; }
@@ -100,14 +103,14 @@
 <div class="menu-wrap">
 
   <div class="cat-label">Pre Entreno</div>
-  <div class="item">Tropical Boost · Piña y Mango</div>
-  <div class="item">Mantequilla de Maní · Leche y Crema de Maní</div>
-  <div class="item">Verde Intenso · Espinaca y Manzana Verde</div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Tropical</span><span class="item-desc">Piña y Mango</span></div></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Maní Power</span><span class="item-desc">Leche y Crema de Maní</span></div></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Turbo Verde</span><span class="item-desc">Espinaca y Manzana Verde</span></div></div>
 
   <div class="cat-label">Post Entreno</div>
-  <div class="item">Proteína Total · Proteína en Polvo y Avena</div>
-  <div class="item">Recuperación · Frutos Rojos y Avena</div>
-  <div class="item">Energía Completa · Leche y Avena</div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Full Protein</span><span class="item-desc">Proteína en Polvo y Avena</span></div></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Frutos Rojos</span><span class="item-desc">Frutos Rojos y Avena</span></div></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Órbita</span><span class="item-desc">Leche y Avena</span></div></div>
 
 </div>
 
