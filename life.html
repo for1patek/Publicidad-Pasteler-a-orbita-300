@@ -197,23 +197,26 @@
 <div class="blu-line">
   <span class="blu-num">10</span>
   <span class="blu-rest">% OFF para clientes</span>
-  <img class="blu-logo" src="https://i.ibb.co/h1hm2qvL/logo-blu.png" alt="Blu">
+  <span style="font-family:'Lora',Georgia,serif;font-size:0.85rem;font-style:italic;font-weight:700;color:#8e44ad;letter-spacing:1px;">blu</span>
 </div>
 </div>
 
 <div class="menu-wrap">
 
   <div class="cat-label">Desayunos</div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Órbita</span><span class="item-desc">Tostadas, huevo revuelto o jamón, palta, mermelada</span></div></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Órbita</span><span class="item-desc">Tostadas, huevo revuelto, palta, mermelada</span></div></div>
 
-  <div class="cat-label">Pre Entreno</div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Tropical</span><span class="item-desc">Mango, piña, jengibre, jugo de naranja</span></div></div>
+  <div class="cat-label">Comidas</div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Vacuno</span><span class="item-desc">Palta, tomate, lechuga, choclo, mayonesa (opcional)</span></div></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Pollo</span><span class="item-desc">Palta, tomate, lechuga, choclo, mayonesa (opcional)</span></div></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Atún</span><span class="item-desc">Palta, tomate, lechuga, choclo, mayonesa (opcional)</span></div></div>
+
+  <div class="cat-label">Batidos Life</div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Tropical</span><span class="item-desc">Mango, piña, jengibre, jugo de naranja · Agua</span></div></div>
   <div class="item"><div class="item-body"><span class="item-nombre">Maní Power</span><span class="item-desc">Plátano, avena, mantequilla de maní, leche, canela</span></div></div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Turbo Verde</span><span class="item-desc">Espinaca, manzana verde, pepino, limón, jengibre</span></div></div>
-
-  <div class="cat-label">Post Entreno</div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Turbo Verde</span><span class="item-desc">Espinaca, manzana verde, pepino, limón, jengibre · Agua</span></div></div>
   <div class="item"><div class="item-body"><span class="item-nombre">Full Protein</span><span class="item-desc">Plátano, proteína en polvo, leche, avena</span></div></div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Frutos Rojos</span><span class="item-desc">Arándano, frutilla, yogurt natural</span></div></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Frutos Rojos</span><span class="item-desc">Arándano, frutilla, yogurt natural, leche</span></div></div>
   <div class="item"><div class="item-body"><span class="item-nombre">Órbita</span><span class="item-desc">Piña, naranja, jengibre, yogurt, leche</span></div></div>
 
   <div class="jugos-wrap" id="jugosBtn" onclick="toggleJugos()">
@@ -228,32 +231,24 @@
 </div>
 
 <div class="jugos-modal" id="jugosModal">
-  <div class="jugos-section-title">🍓 Sabores individuales</div>
+  <div class="jugos-section-title">Sabores individuales</div>
   <div class="jugos-grid">
-    <span class="jugos-chip">Frambuesa</span>
-    <span class="jugos-chip">Piña</span>
-    <span class="jugos-chip">Frutilla</span>
-    <span class="jugos-chip">Melón tuna</span>
-    <span class="jugos-chip">Melón calameño</span>
-    <span class="jugos-chip">Mango</span>
     <span class="jugos-chip">Arándano</span>
+    <span class="jugos-chip">Frambuesa</span>
+    <span class="jugos-chip">Frutilla</span>
+    <span class="jugos-chip">Mango</span>
+    <span class="jugos-chip">Melón calameño</span>
+    <span class="jugos-chip">Melón tuna</span>
+    <span class="jugos-chip">Piña</span>
   </div>
-  <div class="jugos-section-title">✨ Sabores combinados</div>
+  <div class="jugos-section-title">Sabores combinados</div>
   <div class="jugos-grid">
-    <span class="jugos-chip combo">Piña · Mango</span>
-    <span class="jugos-chip combo">Frutilla · Arándano</span>
     <span class="jugos-chip combo">Frambuesa · Arándano</span>
+    <span class="jugos-chip combo">Frutilla · Arándano</span>
     <span class="jugos-chip combo">Naranja · Plátano</span>
+    <span class="jugos-chip combo">Piña · Mango</span>
   </div>
 </div>
-
-<div class="slider-wrap">
-  <div class="slider-track" id="track">
-    <div class="slide-placeholder">
-      <div class="slide-placeholder-icon">🥤</div>
-      <div class="slide-placeholder-text">Fotos próximamente</div>
-    </div>
-  </div>
 </div>
 <div class="slider-dots" id="dots">
   <div class="dot active" onclick="irA(0)"></div>
