@@ -49,6 +49,7 @@
   .item:last-child { border-bottom: none; }
   .item::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); margin-right: 12px; flex-shrink: 0; }
 
+  /* JUGOS WRAP — clickeable */
   .jugos-wrap {
     margin-top: 24px;
     background: var(--card);
@@ -59,10 +60,77 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
   }
+  .jugos-wrap:hover { background: #FFF0D6; border-color: var(--primary); }
+  .jugos-wrap.open { background: #FFF0D6; }
   .jugos-icon { font-size: 1.4rem; flex-shrink: 0; }
   .jugos-text strong { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: var(--primary); display: block; }
   .jugos-text span { font-size: 0.75rem; color: var(--muted); margin-top: 2px; display: block; }
+  .jugos-chevron {
+    margin-left: auto;
+    font-size: 1rem;
+    color: var(--primary);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .jugos-wrap.open .jugos-chevron { transform: rotate(180deg); }
+
+  /* MODAL DE JUGOS */
+  .jugos-modal {
+    display: none;
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    padding: 16px 20px 20px;
+    animation: slideDown 0.25s ease;
+  }
+  .jugos-modal.open { display: block; }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .jugos-section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 3px;
+    color: var(--primary);
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .jugos-section-title:not(:first-child) { margin-top: 16px; }
+
+  .jugos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .jugos-chip {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 11px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .jugos-chip.combo {
+    background: #FDF0E0;
+    border-color: #D4A96A;
+    color: var(--muted);
+  }
 
   .slider-wrap { position: relative; width: 100%; max-width: 480px; margin: 0 auto 0; border-radius: 0; overflow: hidden; aspect-ratio: 4/3; }
   .slider-track { display: flex; height: 100%; transition: transform 0.5s ease; }
@@ -153,21 +221,39 @@
   <div class="item">Chocolate Caliente</div>
 
   <div class="cat-label">Pastelería <span>(Casera)</span></div>
-  <div class="item">Kuchen de Migas</div>
   <div class="item">Pie de Limón</div>
   <div class="item">Brownie</div>
   <div class="item">Cupcake</div>
-  <div class="item">Queque de Zanahoria</div>
-  <div class="item">Waffle</div>
 
-  <div class="jugos-wrap">
+  <div class="jugos-wrap" id="jugosBtn" onclick="toggleJugos()">
     <div class="jugos-icon">🥤</div>
     <div class="jugos-text">
-      <strong>Jugos naturales</strong>
-      <span>100% naturales · Sabores variados</span>
+      <strong>Jugos Naturales</strong>
+      <span>100% naturales · Toca para ver sabores</span>
     </div>
+    <span class="jugos-chevron">▼</span>
   </div>
 
+</div>
+
+<div class="jugos-modal" id="jugosModal">
+  <div class="jugos-section-title">🍓 Sabores individuales</div>
+  <div class="jugos-grid">
+    <span class="jugos-chip">Frambuesa</span>
+    <span class="jugos-chip">Piña</span>
+    <span class="jugos-chip">Frutilla</span>
+    <span class="jugos-chip">Melón tuna</span>
+    <span class="jugos-chip">Melón calameño</span>
+    <span class="jugos-chip">Mango</span>
+    <span class="jugos-chip">Arándano</span>
+  </div>
+  <div class="jugos-section-title">✨ Sabores combinados</div>
+  <div class="jugos-grid">
+    <span class="jugos-chip combo">Piña · Mango</span>
+    <span class="jugos-chip combo">Frutilla · Arándano</span>
+    <span class="jugos-chip combo">Frambuesa · Arándano</span>
+    <span class="jugos-chip combo">Naranja · Plátano</span>
+  </div>
 </div>
 
 <div class="slider-wrap">
@@ -210,6 +296,14 @@
 </div>
 
 <script>
+  // Toggle jugos modal
+  function toggleJugos() {
+    const btn = document.getElementById('jugosBtn');
+    const modal = document.getElementById('jugosModal');
+    btn.classList.toggle('open');
+    modal.classList.toggle('open');
+  }
+
   let actual = 0;
   const total = 6;
   const track = document.getElementById('track');
@@ -229,7 +323,6 @@
     timer = setInterval(() => mover(1), 4000);
   }
 
-  // Swipe táctil
   let startX = 0;
   track.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
