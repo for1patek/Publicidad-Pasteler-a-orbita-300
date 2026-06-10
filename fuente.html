@@ -59,6 +59,9 @@
   .item-price { font-size: 0.82rem; font-weight: 400; color: var(--muted); margin-left: auto; white-space: nowrap; }
   .item-sub { font-family: 'Bebas Neue', sans-serif; font-size: 0.72rem; letter-spacing: 3px; color: var(--muted); padding: 10px 0 4px; border-bottom: 0.5px dashed var(--border); margin-bottom: 2px; }
   .item::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); opacity: 0.7; margin-right: 12px; flex-shrink: 0; }
+  .item-wrap { flex: 1; }
+  .item-desc { font-size: 0.72rem; font-weight: 400; color: var(--muted); margin-top: 2px; display: block; }
+  .sandwich-note { font-size: 0.74rem; font-style: italic; color: var(--muted); text-align: center; margin: -4px 0 10px; }
 
   .jugos-wrap {
     margin-top: 24px;
@@ -109,6 +112,7 @@
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
   }
   .jugos-section-title:not(:first-child) { margin-top: 16px; }
@@ -235,19 +239,20 @@
 
   <div class="cat-label">Sándwiches & Completos</div>
   <div class="item-sub">Sándwiches</div>
-  <div class="item">Mechada<span class="item-price">$10.000</span></div>
-  <div class="item">Lomo Ahumado<span class="item-price">$10.000</span></div>
-  <div class="item">Hamburguesa<span class="item-price">$7.000</span></div>
-  <div class="item">Churrasco<span class="item-price">$6.000</span></div>
+  <div class="sandwich-note">Disponibles en: Italiano · Chacarero · Luco</div>
+  <div class="item"><div class="item-wrap"><span>Mechada Casera</span></div><span class="item-price">$10.000</span></div>
+  <div class="item"><div class="item-wrap"><span>Lomo Ahumado</span></div><span class="item-price">$10.000</span></div>
+  <div class="item"><div class="item-wrap"><span>Hamburguesa Casera</span></div><span class="item-price">$7.000</span></div>
+  <div class="item"><div class="item-wrap"><span>Churrasco</span></div><span class="item-price">$6.000</span></div>
   <div class="item-sub">Completos</div>
-  <div class="item">Completo<span class="item-price">$3.000</span></div>
-  <div class="item">Completo Promo<span class="item-price">$5.500</span></div>
-  <div class="item">AS<span class="item-price">$5.500</span></div>
+  <div class="item"><div class="item-wrap"><span>Completo</span></div><span class="item-price">$3.000</span></div>
+  <div class="item"><div class="item-wrap"><span>Completo Promo</span><span class="item-desc">Completo + Papas fritas</span></div><span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-wrap"><span>AS</span><span class="item-desc">Completo con churrasco en vez de salchicha</span></div><span class="item-price">$5.500</span></div>
 
   <div class="cat-label">Fajitas</div>
-  <div class="item">Vacuno<span class="item-price">$5.000</span></div>
-  <div class="item">Pollo<span class="item-price">$5.000</span></div>
-  <div class="item">Atún<span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-wrap"><span>Vacuno</span><span class="item-desc">Lechuga, Tomate, Palta, Maíz, Mayonesa (opcional)</span></div><span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-wrap"><span>Pollo</span><span class="item-desc">Lechuga, Tomate, Palta, Maíz, Mayonesa (opcional)</span></div><span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-wrap"><span>Atún</span><span class="item-desc">Lechuga, Tomate, Palta, Maíz, Mayonesa (opcional)</span></div><span class="item-price">$5.000</span></div>
 
   <div class="cat-label">Papas & Extras</div>
   <div class="item">Papas fritas<span class="item-price">desde $2.500</span></div>
