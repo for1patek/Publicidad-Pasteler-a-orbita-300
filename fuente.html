@@ -54,8 +54,10 @@
     gap: 5px;
   }
 
-  .item { display: flex; align-items: center; padding: clamp(10px, 3vw, 14px) 0; border-bottom: 0.5px solid var(--border); font-size: clamp(0.88rem, 3vw, 1rem); font-weight: 600; color: var(--text); }
+  .item { display: flex; align-items: center; justify-content: space-between; padding: clamp(10px, 3vw, 14px) 0; border-bottom: 0.5px solid var(--border); font-size: clamp(0.88rem, 3vw, 1rem); font-weight: 600; color: var(--text); }
   .item:last-child { border-bottom: none; }
+  .item-price { font-size: 0.82rem; font-weight: 400; color: var(--muted); margin-left: auto; white-space: nowrap; }
+  .item-sub { font-family: 'Bebas Neue', sans-serif; font-size: 0.72rem; letter-spacing: 3px; color: var(--muted); padding: 10px 0 4px; border-bottom: 0.5px dashed var(--border); margin-bottom: 2px; }
   .item::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); opacity: 0.7; margin-right: 12px; flex-shrink: 0; }
 
   .jugos-wrap {
@@ -110,6 +112,31 @@
     gap: 6px;
   }
   .jugos-section-title:not(:first-child) { margin-top: 16px; }
+  .jugos-price {
+    margin-left: auto;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: var(--primary);
+  }
+  .jugos-section-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 8px 0 6px;
+  }
+  .jugos-chip.leche {
+    background: #EEF6FF;
+    border-color: #A8C8E8;
+    color: #2C5F8A;
+  }
+  .jugos-chip.combo.leche {
+    background: #E8F0FF;
+    border-color: #8AAAD4;
+    color: #2C4F7A;
+  }
   .jugos-grid { display: flex; flex-wrap: wrap; gap: 7px; }
   .jugos-chip {
     background: #1a0d04;
@@ -207,29 +234,31 @@
 <div class="menu-wrap">
 
   <div class="cat-label">Sándwiches & Completos</div>
-  <div class="vegan-note">🌱 Opciones veganas disponibles</div>
-  <div class="item">Completo</div>
-  <div class="item">Mechada</div>
-  <div class="item">Lomo</div>
-  <div class="item">Hamburguesa</div>
-  <div class="item">Churrasco</div>
-  <div class="item">AS</div>
+  <div class="item-sub">Sándwiches</div>
+  <div class="item">Mechada<span class="item-price">$10.000</span></div>
+  <div class="item">Lomo<span class="item-price">$10.000</span></div>
+  <div class="item">Hamburguesa<span class="item-price">$7.000</span></div>
+  <div class="item">Churrasco<span class="item-price">$6.000</span></div>
+  <div class="item-sub">Completos</div>
+  <div class="item">Completo<span class="item-price">$3.000</span></div>
+  <div class="item">Completo Promo<span class="item-price">$5.500</span></div>
+  <div class="item">AS<span class="item-price">$5.500</span></div>
 
   <div class="cat-label">Fajitas</div>
-  <div class="item">Vacuno</div>
-  <div class="item">Pollo</div>
-  <div class="item">Atún</div>
+  <div class="item">Vacuno<span class="item-price">$5.000</span></div>
+  <div class="item">Pollo<span class="item-price">$5.000</span></div>
+  <div class="item">Atún<span class="item-price">$5.000</span></div>
 
   <div class="cat-label">Papas & Extras</div>
-  <div class="item">Papas fritas</div>
-  <div class="item">Salchipapa</div>
-  <div class="item">Papas con Nuggets</div>
+  <div class="item">Papas fritas<span class="item-price">desde $2.500</span></div>
+  <div class="item">Salchipapa<span class="item-price">desde $3.500</span></div>
+  <div class="item">Papas con Nuggets<span class="item-price">$5.500</span></div>
 
   <div class="jugos-wrap" id="jugosBtn" onclick="toggleJugos()">
     <div class="jugos-icon">🥤</div>
     <div class="jugos-text">
-      <strong>Jugos Naturales</strong>
-      <span>100% naturales · Toca para ver sabores</span>
+      <strong>Jugos & Batidos Naturales</strong>
+      <span>Jugos (agua) · Batidos (leche) · Toca para ver</span>
     </div>
     <span class="jugos-chevron">▼</span>
   </div>
@@ -237,7 +266,9 @@
 </div>
 
 <div class="jugos-modal" id="jugosModal">
-  <div class="jugos-section-title">Sabores individuales</div>
+  <div class="jugos-section-title">🥛 Batidos — Fruta + leche<span class="jugos-price">$3.000</span></div>
+  <div class="jugos-section-title" style="margin-top:16px;">🥤 Jugos — Fruta + agua<span class="jugos-price">$2.500</span></div>
+  <div class="jugos-section-subtitle">Individuales</div>
   <div class="jugos-grid">
     <span class="jugos-chip">Arándano</span>
     <span class="jugos-chip">Frambuesa</span>
@@ -247,7 +278,7 @@
     <span class="jugos-chip">Melón tuna</span>
     <span class="jugos-chip">Piña</span>
   </div>
-  <div class="jugos-section-title">Sabores combinados</div>
+  <div class="jugos-section-subtitle">Combinados</div>
   <div class="jugos-grid">
     <span class="jugos-chip combo">Frambuesa · Arándano</span>
     <span class="jugos-chip combo">Frutilla · Arándano</span>
