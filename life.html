@@ -46,6 +46,7 @@
   .cat-label:first-child { margin-top: 0; }
 
   .item { display: flex; align-items: flex-start; gap: 10px; padding: clamp(10px, 3vw, 14px) 0; border-bottom: 0.5px solid var(--border); }
+  .item-price { font-size: 0.82rem; font-weight: 400; color: var(--muted); margin-left: auto; white-space: nowrap; padding-left: 8px; flex-shrink: 0; }
   .item:last-child { border-bottom: none; }
   .item::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
   .item-body { display: flex; flex-direction: column; gap: 2px; }
@@ -169,6 +170,31 @@
     gap: 6px;
   }
   .jugos-section-title:not(:first-child) { margin-top: 16px; }
+  .jugos-price {
+    margin-left: auto;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: var(--primary);
+  }
+  .jugos-section-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 8px 0 6px;
+  }
+  .jugos-chip.leche {
+    background: #EEF6FF;
+    border-color: #A8C8E8;
+    color: #2C5F8A;
+  }
+  .jugos-chip.combo.leche {
+    background: #E8F0FF;
+    border-color: #8AAAD4;
+    color: #2C4F7A;
+  }
   .jugos-grid { display: flex; flex-wrap: wrap; gap: 7px; }
   .jugos-chip {
     background: var(--bg);
@@ -204,26 +230,26 @@
 <div class="menu-wrap">
 
   <div class="cat-label">Desayunos</div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Órbita</span><span class="item-desc">Tostadas, huevo revuelto, palta, mermelada</span></div></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Órbita</span><span class="item-desc">Tostadas, huevo revuelto, palta, mermelada</span></div><span class="item-price">$6.000</span></div>
 
   <div class="cat-label">Comidas</div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Vacuno</span><span class="item-desc">Palta, tomate, lechuga, choclo, mayonesa (opcional)</span></div></div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Pollo</span><span class="item-desc">Palta, tomate, lechuga, choclo, mayonesa (opcional)</span></div></div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Atún</span><span class="item-desc">Palta, tomate, lechuga, choclo, mayonesa (opcional)</span></div></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Vacuno</span><span class="item-desc">Palta, tomate, lechuga, choclo, mayonesa (opcional)</span></div><span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Pollo</span><span class="item-desc">Palta, tomate, lechuga, choclo, mayonesa (opcional)</span></div><span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Atún</span><span class="item-desc">Palta, tomate, lechuga, choclo, mayonesa (opcional)</span></div><span class="item-price">$5.000</span></div>
 
   <div class="cat-label">Batidos Life</div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Tropical</span><span class="item-desc">Mango, piña, jengibre, jugo de naranja · Agua</span></div></div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Maní Power</span><span class="item-desc">Plátano, avena, mantequilla de maní, leche, canela</span></div></div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Turbo Verde</span><span class="item-desc">Espinaca, manzana verde, pepino, limón, jengibre · Agua</span></div></div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Full Protein</span><span class="item-desc">Plátano, proteína en polvo, leche, avena</span></div></div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Frutos Rojos</span><span class="item-desc">Arándano, frutilla, yogurt natural, leche</span></div></div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Órbita</span><span class="item-desc">Piña, naranja, jengibre, yogurt, leche</span></div></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Tropical</span><span class="item-desc">Mango, piña, jengibre, jugo de naranja · Agua</span></div><span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Maní Power</span><span class="item-desc">Plátano, avena, mantequilla de maní, leche, canela</span></div><span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Turbo Verde</span><span class="item-desc">Espinaca, manzana verde, pepino, limón, jengibre · Agua</span></div><span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Full Protein</span><span class="item-desc">Plátano, proteína en polvo, leche, avena</span></div><span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Frutos Rojos</span><span class="item-desc">Arándano, frutilla, yogurt natural, leche</span></div><span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Órbita</span><span class="item-desc">Piña, naranja, jengibre, yogurt, leche</span></div><span class="item-price">$5.000</span></div>
 
   <div class="jugos-wrap" id="jugosBtn" onclick="toggleJugos()">
     <div class="jugos-icon">🥤</div>
     <div class="jugos-text">
-      <strong>Jugos Naturales</strong>
-      <span>100% naturales · Toca para ver sabores</span>
+      <strong>Jugos & Batidos Naturales</strong>
+      <span>Jugos (agua) · Batidos (leche) · Toca para ver</span>
     </div>
     <span class="jugos-chevron">▼</span>
   </div>
@@ -231,7 +257,9 @@
 </div>
 
 <div class="jugos-modal" id="jugosModal">
-  <div class="jugos-section-title">Sabores individuales</div>
+  <div class="jugos-section-title">🥛 Batidos — Fruta + leche<span class="jugos-price">$3.000</span></div>
+  <div class="jugos-section-title" style="margin-top:16px;">🥤 Jugos — Fruta + agua<span class="jugos-price">$2.500</span></div>
+  <div class="jugos-section-subtitle">Individuales</div>
   <div class="jugos-grid">
     <span class="jugos-chip">Arándano</span>
     <span class="jugos-chip">Frambuesa</span>
@@ -241,7 +269,7 @@
     <span class="jugos-chip">Melón tuna</span>
     <span class="jugos-chip">Piña</span>
   </div>
-  <div class="jugos-section-title">Sabores combinados</div>
+  <div class="jugos-section-subtitle">Combinados</div>
   <div class="jugos-grid">
     <span class="jugos-chip combo">Frambuesa · Arándano</span>
     <span class="jugos-chip combo">Frutilla · Arándano</span>
