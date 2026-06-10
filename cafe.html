@@ -45,9 +45,10 @@
   .cat-label:first-child { margin-top: 0; }
   .cat-label span { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 1px; color: var(--muted); text-transform: none; font-weight: 400; }
 
-  .item { display: flex; align-items: center; padding: clamp(10px, 3vw, 14px) 0; border-bottom: 0.5px solid var(--border); font-size: clamp(0.88rem, 3vw, 1rem); font-weight: 600; color: var(--text); }
+  .item { display: flex; align-items: center; justify-content: space-between; padding: clamp(10px, 3vw, 14px) 0; border-bottom: 0.5px solid var(--border); font-size: clamp(0.88rem, 3vw, 1rem); font-weight: 600; color: var(--text); }
   .item:last-child { border-bottom: none; }
   .item::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); margin-right: 12px; flex-shrink: 0; }
+  .item-price { font-size: 0.82rem; font-weight: 400; color: var(--muted); margin-left: auto; white-space: nowrap; }
 
   /* JUGOS WRAP — clickeable */
   .jugos-wrap {
@@ -110,6 +111,31 @@
     gap: 6px;
   }
   .jugos-section-title:not(:first-child) { margin-top: 16px; }
+  .jugos-price {
+    margin-left: auto;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: var(--primary);
+  }
+  .jugos-section-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 8px 0 6px;
+  }
+  .jugos-chip.leche {
+    background: #EEF6FF;
+    border-color: #A8C8E8;
+    color: #2C5F8A;
+  }
+  .jugos-chip.combo.leche {
+    background: #E8F0FF;
+    border-color: #8AAAD4;
+    color: #2C4F7A;
+  }
 
   .jugos-grid {
     display: flex;
@@ -212,24 +238,25 @@
 <div class="menu-wrap">
 
   <div class="cat-label">Cafés</div>
-  <div class="item">Espresso</div>
-  <div class="item">Americano</div>
-  <div class="item">Cortado</div>
-  <div class="item">Latte</div>
-  <div class="item">Capuchino</div>
-  <div class="item">Mocachino</div>
-  <div class="item">Chocolate Caliente (Casero)</div>
+  <div class="item">Espresso<span class="item-price">$2.000</span></div>
+  <div class="item">Americano<span class="item-price">$2.000</span></div>
+  <div class="item">Cortado<span class="item-price">$2.500</span></div>
+  <div class="item">Latte<span class="item-price">$2.500</span></div>
+  <div class="item">Capuchino<span class="item-price">$2.500</span></div>
+  <div class="item">Mocachino<span class="item-price">$2.800</span></div>
+  <div class="item">Chocolate Caliente (Casero)<span class="item-price">$3.000</span></div>
 
   <div class="cat-label">Pastelería <span>(Casera)</span></div>
-  <div class="item">Pie de Limón</div>
-  <div class="item">Brownie</div>
-  <div class="item">Cupcake</div>
+  <div class="item">Pie de Limón<span class="item-price">$2.000</span></div>
+  <div class="item">Brownie<span class="item-price">$2.000</span></div>
+  <div class="item">Cupcake Zanahoria<span class="item-price">$1.000</span></div>
+  <div class="item">Cupcake Chocolate<span class="item-price">$1.200</span></div>
 
   <div class="jugos-wrap" id="jugosBtn" onclick="toggleJugos()">
     <div class="jugos-icon">🥤</div>
     <div class="jugos-text">
-      <strong>Jugos Naturales</strong>
-      <span>100% naturales · Toca para ver sabores</span>
+      <strong>Jugos & Batidos Naturales</strong>
+      <span>Jugos (agua) · Batidos (leche) · Toca para ver</span>
     </div>
     <span class="jugos-chevron">▼</span>
   </div>
@@ -237,7 +264,9 @@
 </div>
 
 <div class="jugos-modal" id="jugosModal">
-  <div class="jugos-section-title">Sabores individuales</div>
+  <div class="jugos-section-title">🥛 Batidos — Fruta + leche<span class="jugos-price">$3.000</span></div>
+  <div class="jugos-section-title" style="margin-top:16px;">🥤 Jugos — Fruta + agua<span class="jugos-price">$2.500</span></div>
+  <div class="jugos-section-subtitle">Individuales</div>
   <div class="jugos-grid">
     <span class="jugos-chip">Arándano</span>
     <span class="jugos-chip">Frambuesa</span>
@@ -247,7 +276,7 @@
     <span class="jugos-chip">Melón tuna</span>
     <span class="jugos-chip">Piña</span>
   </div>
-  <div class="jugos-section-title">Sabores combinados</div>
+  <div class="jugos-section-subtitle">Combinados</div>
   <div class="jugos-grid">
     <span class="jugos-chip combo">Frambuesa · Arándano</span>
     <span class="jugos-chip combo">Frutilla · Arándano</span>
