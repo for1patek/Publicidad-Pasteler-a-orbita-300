@@ -48,6 +48,7 @@
   .item { display: flex; align-items: flex-start; gap: 10px; padding: clamp(10px, 3vw, 14px) 0; border-bottom: 0.5px solid var(--border); }
   .item-price { font-size: 0.82rem; font-weight: 400; color: var(--muted); margin-left: auto; white-space: nowrap; padding-left: 8px; flex-shrink: 0; }
   .item:last-child { border-bottom: none; }
+  .sandwich-note { font-size: 0.74rem; font-style: italic; color: var(--muted); text-align: center; margin: -4px 0 10px; }
   .item::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
   .item-body { display: flex; flex-direction: column; gap: 2px; }
   .item-nombre { font-size: clamp(0.95rem, 3vw, 1.05rem); font-weight: 700; color: var(--text); }
@@ -234,9 +235,11 @@
   <div class="item"><div class="item-body"><span class="item-nombre">Órbita</span><span class="item-desc">Americano o Espresso, Tostadas, Huevo revuelto, Palta, Jamón, Mermelada</span></div><span class="item-price">$6.000</span></div>
 
   <div class="cat-label">Comidas</div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Vacuno</span><span class="item-desc">Palta, Tomate, Lechuga, Choclo, Mayonesa (opcional)</span></div><span class="item-price">$5.000</span></div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Pollo</span><span class="item-desc">Palta, Tomate, Lechuga, Choclo, Mayonesa (opcional)</span></div><span class="item-price">$5.000</span></div>
-  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Atún</span><span class="item-desc">Palta, Tomate, Lechuga, Choclo, Mayonesa (opcional)</span></div><span class="item-price">$5.000</span></div>
+  <div class="sandwich-note">Ingredientes base de Fajita: Lechuga, Tomate, Palta, Maíz</div>
+  <div class="sandwich-note">Mayonesa (opcional)</div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Vacuno</span></div><span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Pollo</span></div><span class="item-price">$5.000</span></div>
+  <div class="item"><div class="item-body"><span class="item-nombre">Fajita Atún</span></div><span class="item-price">$5.000</span></div>
 
   <div class="cat-label">Batidos Life</div>
   <div class="item"><div class="item-body"><span class="item-nombre">Tropical</span><span class="item-desc">Mango, Piña, Jengibre, Jugo de naranja · Agua</span></div><span class="item-price">$5.000</span></div>
