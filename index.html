@@ -104,11 +104,15 @@
     display: inline-flex; align-items: center; gap: 5px;
     color: var(--muted); text-decoration: none;
     font-size: clamp(0.72rem, 2.5vw, 0.8rem);
-    transition: color 0.2s;
+    border: 1px solid #2a2a32;
+    border-radius: 20px;
+    padding: 8px 18px;
+    background: #1a1a20;
+    transition: color 0.2s, border-color 0.2s;
   }
-  a.location-link:hover { color: var(--text); }
+  a.location-link:hover { color: var(--text); border-color: var(--muted); }
 
-  .contact-btns { display: flex; gap: 12px; justify-content: center; margin-top: 10px; }
+  .contact-btns { display: flex; gap: 12px; justify-content: center; margin-top: 10px; margin-bottom: 24px; }
   .contact-btn { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1a1a20; border: 1px solid #2a2a32; transition: transform .2s; }
   .contact-btn:hover { transform: scale(1.1); }
   .contact-btn svg { width: 26px; height: 26px; }
@@ -117,7 +121,7 @@
 <body>
   <div class="wrap">
 
-    <img src="https://i.ibb.co/tpQwsj1Q/logo-rbita-2-0.png" alt="Órbita 300" style="width: clamp(180px, 55vw, 260px); display: block; margin: 0 auto -8px;">
+    <img src="https://i.ibb.co/1twYgVKM/LOGO-orbira-300-2-2.png" alt="Órbita 300" style="width: clamp(180px, 55vw, 260px); display: block; margin: 0 auto -8px;">
     <div class="logo-sub">Frutillar</div>
     <div class="divider"></div>
 
