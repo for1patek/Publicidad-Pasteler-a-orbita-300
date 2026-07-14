@@ -1,24 +1,42 @@
 {
-  "fecha": "Martes 14 de Julio",
+  "fecha": "Miércoles 15 de Julio",
   "items": [
     {
-      "nombre": "Cazuela de Vacuno",
-      "descripcion": "Con arroz, papa y ensalada",
-      "precio": "$5.000",
-      "categoria": "Plato de Fondo"
+      "nombre": "Suprema de pollo",
+      "descripcion": "En salsa de champiñones",
+      "categoria": "Plato Principal"
     },
     {
-      "nombre": "Pastel de Choclo",
-      "descripcion": "Porción individual",
-      "precio": "$4.500",
-      "categoria": "Plato de Fondo"
+      "nombre": "Carne de vacuno",
+      "descripcion": "Salsa de champiñones opcional",
+      "categoria": "Plato Principal"
     },
     {
-      "nombre": "Pie de Limón",
-      "descripcion": "",
-      "precio": "$2.000",
+      "nombre": "Pollo asado",
+      "categoria": "Plato Principal"
+    },
+    {
+      "nombre": "Pasta con salsa blanca y pollo",
+      "descripcion": "Opcional agregar camarones",
+      "categoria": "Plato Principal"
+    },
+    {
+      "nombre": "Acompañamiento a elección",
+      "descripcion": "Puré casero, arroz o papas fritas",
+      "categoria": "Incluye"
+    },
+    {
+      "nombre": "Ensalada surtida",
+      "categoria": "Incluye"
+    },
+    {
+      "nombre": "Pan casero",
+      "categoria": "Incluye"
+    },
+    {
+      "nombre": "Leche nevada",
       "categoria": "Postre"
     }
   ],
-  "nota": "Menú disponible mientras dure el stock."
+  "nota": "📲 Pide antes de las 11:00 hrs para asegurar tu almuerzo · 🚚 Te esperamos en Órbita Foodtruck, exterior de Blu"
 }
