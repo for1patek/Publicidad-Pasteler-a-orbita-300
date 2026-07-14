@@ -22,6 +22,7 @@
     --cafe:   #8B1A1A;
     --fuente: #D4872A;
     --life:   #2D6A4F;
+    --diario: #C98A2B;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -53,6 +54,7 @@
   a.card.cafe   { border-left: 4px solid var(--cafe); }
   a.card.fuente { border-left: 4px solid var(--fuente); }
   a.card.life   { border-left: 4px solid var(--life); }
+  a.card.diario { border-left: 4px solid var(--diario); }
   .blu-badge {
     display: inline-flex;
     align-items: center;
@@ -69,6 +71,7 @@
   a.card.cafe   .card-body strong { color: #e8b4b4; }
   a.card.fuente .card-body strong { color: var(--fuente); }
   a.card.life   .card-body strong { color: #52B788; }
+  a.card.diario .card-body strong { color: var(--diario); }
   .card-body span { font-size: clamp(0.72rem, 2.5vw, 0.8rem); color: var(--muted); margin-top: 3px; display: block; }
   .card-arrow { font-size: 1rem; color: var(--border); flex-shrink: 0; }
 
@@ -149,6 +152,14 @@
           <span>Batidos proteícos/entrenamiento, desayuno, y más</span>
         </div>
         <span class="blu-badge"><span class="bn">10</span><span class="br">% OFF</span><img src="https://i.ibb.co/h1hm2qvL/logo-blu.png" alt="Blu"></span>
+      </a>
+      <a class="card diario" href="menu-diario.html">
+        <span class="card-emoji">📋</span>
+        <div class="card-body">
+          <strong>Menú del Día</strong>
+          <span>Lo que preparamos hoy</span>
+        </div>
+        <span class="card-arrow">›</span>
       </a>
     </div>
 
