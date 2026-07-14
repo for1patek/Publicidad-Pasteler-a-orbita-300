@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generador · Menú del Día</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #C98A2B;
+    --bg:      #08080a;
+    --card:    #121216;
+    --border:  #2a2a32;
+    --text:    #f0f0f5;
+    --muted:   #8a8a98;
+    --danger:  #c0392b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: clamp(20px, 5vw, 40px) clamp(14px, 4vw, 24px) 60px;
+  }
+  .wrap { max-width: 560px; margin: 0 auto; }
+  h1 { font-family: 'Bebas Neue', sans-serif; letter-spacing: 3px; font-size: clamp(1.5rem, 6vw, 2rem); color: var(--primary); margin-bottom: 4px; }
+  .sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 24px; }
+
+  label { display: block; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; margin-top: 14px; }
+  input, textarea {
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+  }
+  input:focus, textarea:focus { outline: none; border-color: var(--primary); }
+
+  .item-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 14px 16px;
+    margin-top: 16px;
+    position: relative;
+  }
+  .item-num { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--primary); font-size: 0.9rem; }
+  .row2 { display: flex; gap: 10px; }
+  .row2 > div { flex: 1; }
+
+  .btn-eliminar {
+    position: absolute; top: 10px; right: 10px;
+    background: none; border: none; color: var(--danger);
+    font-size: 0.75rem; cursor: pointer; letter-spacing: 1px;
+  }
+  .btn-eliminar:hover { text-decoration: underline; }
+
+  .btn {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    margin-top: 18px;
+  }
+  .btn-secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
+  .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+  .btn-primary { background: var(--primary); color: #08080a; width: 100%; margin-top: 28px; font-size: 0.95rem; }
+  .btn-primary:hover { filter: brightness(1.08); }
+
+  .divider { height: 1px; background: var(--border); margin: 28px 0 8px; }
+
+  .preview {
+    margin-top: 14px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 260px;
+    overflow-y: auto;
+    display: none;
+  }
+
+  .instrucciones {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--primary);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 16px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .instrucciones b { color: var(--text); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Generador de Menú del Día</h1>
+    <div class="sub">Uso privado — no está enlazado desde el sitio público.</div>
+
+    <div class="instrucciones">
+      <b>Cómo usarlo:</b><br>
+      1. Completá la fecha y los platos de hoy.<br>
+      2. Tocá <b>"Descargar menu-diario.json"</b>.<br>
+      3. Reemplazá el archivo <b>menu-diario.json</b> en tu repo (GitHub) por el que se descargó.<br>
+      4. Vercel actualiza el sitio solo en unos segundos.
+    </div>
+
+    <label>Fecha a mostrar</label>
+    <input type="text" id="fecha" placeholder="Ej: Martes 14 de Julio">
+
+    <label>Nota / aviso (opcional)</label>
+    <input type="text" id="nota" placeholder="Ej: Menú disponible mientras dure el stock">
+
+    <div class="divider"></div>
+
+    <div id="items"></div>
+
+    <button class="btn btn-secondary" onclick="agregarItem()">+ Agregar plato</button>
+
+    <button class="btn btn-primary" onclick="descargar()">⬇ Descargar menu-diario.json</button>
+
+    <div class="preview" id="preview"></div>
+  </div>
+
+<script>
+  let contador = 0;
+
+  function agregarItem(valores) {
+    contador++;
+    const id = contador;
+    const div = document.createElement('div');
+    div.className = 'item-card';
+    div.id = 'item-' + id;
+    div.innerHTML = `
+      <button class="btn-eliminar" onclick="eliminarItem(${id})">Eliminar ✕</button>
+      <div class="item-num">Plato ${id}</div>
+
+      <label>Nombre del plato</label>
+      <input type="text" id="nombre-${id}" placeholder="Ej: Cazuela de Vacuno" value="${valores?.nombre || ''}">
+
+      <div class="row2">
+        <div>
+          <label>Precio</label>
+          <input type="text" id="precio-${id}" placeholder="Ej: $5.000" value="${valores?.precio || ''}">
+        </div>
+        <div>
+          <label>Categoría (opcional)</label>
+          <input type="text" id="categoria-${id}" placeholder="Ej: Plato de Fondo" value="${valores?.categoria || ''}">
+        </div>
+      </div>
+
+      <label>Descripción (opcional)</label>
+      <input type="text" id="descripcion-${id}" placeholder="Ej: Con arroz y ensalada" value="${valores?.descripcion || ''}">
+    `;
+    document.getElementById('items').appendChild(div);
+  }
+
+  function eliminarItem(id) {
+    const el = document.getElementById('item-' + id);
+    if (el) el.remove();
+  }
+
+  function recolectarDatos() {
+    const fecha = document.getElementById('fecha').value.trim();
+    const nota = document.getElementById('nota').value.trim();
+    const items = [];
+
+    document.querySelectorAll('.item-card').forEach(card => {
+      const id = card.id.replace('item-', '');
+      const nombre = document.getElementById('nombre-' + id).value.trim();
+      const precio = document.getElementById('precio-' + id).value.trim();
+      const categoria = document.getElementById('categoria-' + id).value.trim();
+      const descripcion = document.getElementById('descripcion-' + id).value.trim();
+      if (nombre) {
+        const item = { nombre };
+        if (descripcion) item.descripcion = descripcion;
+        if (precio) item.precio = precio;
+        if (categoria) item.categoria = categoria;
+        items.push(item);
+      }
+    });
+
+    return { fecha, items, ...(nota ? { nota } : {}) };
+  }
+
+  function descargar() {
+    const data = recolectarDatos();
+    if (!data.fecha || data.items.length === 0) {
+      alert('Completá al menos la fecha y un plato antes de descargar.');
+      return;
+    }
+    const json = JSON.stringify(data, null, 2);
+
+    const preview = document.getElementById('preview');
+    preview.textContent = json;
+    preview.style.display = 'block';
+
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'menu-diario.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  // Arranca con un plato vacío listo para completar
+  agregarItem();
+</script>
+</body>
+</html>

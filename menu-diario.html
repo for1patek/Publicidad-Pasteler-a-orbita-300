@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Órbita 300 · Menú del Día</title>
+<link rel="icon" type="image/png" href="https://i.ibb.co/nqkMR2b8/Logo-rbita-300-removebg-preview.png">
+<link rel="apple-touch-icon" href="https://i.ibb.co/nqkMR2b8/Logo-rbita-300-removebg-preview.png">
+<meta property="og:title" content="Órbita 300 · Menú del Día">
+<meta property="og:description" content="El menú del día, actualizado a diario. Frutillar.">
+<meta property="og:image" content="https://i.ibb.co/tpQwsj1Q/logo-rbita-2-0.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Lora:ital,wght@1,700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #C98A2B;
+    --bg:      #08080a;
+    --card:    #121216;
+    --border:  #2a2a32;
+    --text:    #f0f0f5;
+    --muted:   #8a8a98;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(28px, 7vw, 44px) clamp(16px, 5vw, 24px) clamp(40px, 10vw, 56px);
+  }
+  .wrap { width: 100%; max-width: 480px; }
+
+  .back { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; font-size: 0.8rem; margin-bottom: 22px; }
+  .back:hover { color: var(--text); }
+
+  .hero { text-align: center; padding-bottom: clamp(20px, 5vw, 28px); border-bottom: 2px solid var(--primary); margin-bottom: 24px; }
+  .logo { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 6vw, 1.9rem); letter-spacing: 2px; color: var(--text); line-height: 1; }
+  .badge-hoy {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 4px;
+    font-size: clamp(2rem, 9vw, 2.7rem);
+    color: var(--primary);
+    margin: 6px 0 4px;
+  }
+  .fecha { font-size: clamp(0.75rem, 2.5vw, 0.85rem); letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+
+  .menu-list { display: flex; flex-direction: column; }
+  .cat-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: var(--primary);
+    border-left: 3px solid var(--primary);
+    padding-left: 10px;
+    margin: 22px 0 8px;
+  }
+  .cat-label:first-child { margin-top: 0; }
+
+  .item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    padding: clamp(12px, 3.5vw, 15px) 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .item:last-child { border-bottom: none; }
+  .item-main { display: flex; gap: 10px; flex: 1; }
+  .item-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); margin-top: 7px; flex-shrink: 0; }
+  .item-name { font-size: clamp(0.9rem, 3vw, 1rem); font-weight: 600; color: var(--text); }
+  .item-desc { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+  .item-price { font-size: 0.85rem; font-weight: 600; color: var(--primary); white-space: nowrap; flex-shrink: 0; }
+
+  .nota {
+    margin-top: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--primary);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 14px;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .estado {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .footer { margin-top: 36px; text-align: center; }
+  .contact-btns { display: flex; gap: 12px; justify-content: center; margin-top: 4px; }
+  .contact-btn { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #1a1a20; border: 1px solid #2a2a32; transition: transform .2s; }
+  .contact-btn:hover { transform: scale(1.1); }
+  .contact-btn svg { width: 26px; height: 26px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="index.html">← Volver</a>
+
+    <div class="hero">
+      <div class="logo">Órbita 300</div>
+      <div class="badge-hoy">MENÚ DEL DÍA</div>
+      <div class="fecha" id="fecha">Cargando…</div>
+    </div>
+
+    <div id="contenido">
+      <div class="estado">Cargando menú del día…</div>
+    </div>
+
+    <div class="footer">
+      <div class="contact-btns">
+        <a class="contact-btn" href="https://wa.me/56971019691" target="_blank" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><radialGradient id="wag" cx="11.987" cy="44.637" r="44.222" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#44e000"/><stop offset="1" stop-color="#25d366"/></radialGradient><path fill="url(#wag)" d="M24 4C13 4 4 13 4 24c0 3.7 1 7.1 2.8 10.1L4 44l10.2-2.7C17.1 43 20.5 44 24 44c11 0 20-9 20-20S35 4 24 4z"/><path fill="#fff" d="M34.5 29.2c-.5-.3-3-1.5-3.5-1.7-.5-.2-.8-.3-1.1.2s-1.3 1.7-1.6 2c-.3.4-.6.4-1.1.1-3-1.5-5-2.7-6.9-6.1-.5-.9.5-.8 1.5-2.8.2-.4.1-.7-.1-1-.2-.3-1.1-2.6-1.5-3.6-.4-.9-.8-.8-1.1-.8h-.9c-.3 0-.8.1-1.2.6-.4.5-1.6 1.5-1.6 3.8s1.6 4.4 1.8 4.7c.2.3 3.2 4.9 7.7 6.8 4.6 1.9 4.6 1.3 5.4 1.2.8-.1 2.6-1.1 3-2.1.4-1 .4-1.9.3-2.1-.1-.1-.4-.2-.9-.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function cargarMenu() {
+      const contenido = document.getElementById('contenido');
+      const fechaEl = document.getElementById('fecha');
+      try {
+        const res = await fetch('menu-diario.json?t=' + Date.now());
+        if (!res.ok) throw new Error('No se pudo cargar');
+        const data = await res.json();
+
+        fechaEl.textContent = data.fecha || '';
+
+        if (!data.items || data.items.length === 0) {
+          contenido.innerHTML = '<div class="estado">Hoy no hay menú del día publicado.<br>¡Vuelve a revisar más tarde!</div>';
+          return;
+        }
+
+        // Agrupar por categoría si viene definida; si no, lista plana
+        const grupos = {};
+        const sinCategoria = [];
+        data.items.forEach(it => {
+          if (it.categoria) {
+            grupos[it.categoria] = grupos[it.categoria] || [];
+            grupos[it.categoria].push(it);
+          } else {
+            sinCategoria.push(it);
+          }
+        });
+
+        let html = '<div class="menu-list">';
+
+        sinCategoria.forEach(it => { html += renderItem(it); });
+
+        Object.keys(grupos).forEach(cat => {
+          html += `<div class="cat-label">${escapeHtml(cat)}</div>`;
+          grupos[cat].forEach(it => { html += renderItem(it); });
+        });
+
+        html += '</div>';
+
+        if (data.nota) {
+          html += `<div class="nota">${escapeHtml(data.nota)}</div>`;
+        }
+
+        contenido.innerHTML = html;
+      } catch (err) {
+        fechaEl.textContent = '';
+        contenido.innerHTML = '<div class="estado">No pudimos cargar el menú del día.<br>Intenta nuevamente en unos minutos.</div>';
+      }
+    }
+
+    function renderItem(it) {
+      return `
+        <div class="item">
+          <div class="item-main">
+            <span class="item-dot"></span>
+            <div>
+              <div class="item-name">${escapeHtml(it.nombre || '')}</div>
+              ${it.descripcion ? `<div class="item-desc">${escapeHtml(it.descripcion)}</div>` : ''}
+            </div>
+          </div>
+          ${it.precio ? `<span class="item-price">${escapeHtml(it.precio)}</span>` : ''}
+        </div>`;
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    cargarMenu();
+  </script>
+</body>
+</html>

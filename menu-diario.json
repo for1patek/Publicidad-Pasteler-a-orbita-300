@@ -1,0 +1,24 @@
+{
+  "fecha": "Martes 14 de Julio",
+  "items": [
+    {
+      "nombre": "Cazuela de Vacuno",
+      "descripcion": "Con arroz, papa y ensalada",
+      "precio": "$5.000",
+      "categoria": "Plato de Fondo"
+    },
+    {
+      "nombre": "Pastel de Choclo",
+      "descripcion": "Porción individual",
+      "precio": "$4.500",
+      "categoria": "Plato de Fondo"
+    },
+    {
+      "nombre": "Pie de Limón",
+      "descripcion": "",
+      "precio": "$2.000",
+      "categoria": "Postre"
+    }
+  ],
+  "nota": "Menú disponible mientras dure el stock."
+}
