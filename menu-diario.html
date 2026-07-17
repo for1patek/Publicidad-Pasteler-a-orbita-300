@@ -51,7 +51,17 @@
 
   .slider-wrap { position: relative; width: 100%; margin: 0 0 24px; border-radius: 14px; overflow: hidden; aspect-ratio: 4/3; }
   .slider-track { display: flex; height: 100%; transition: transform 0.5s ease; }
-  .slide { min-width: 100%; height: 100%; position: relative; background-size: cover; background-position: center; }
+  .slide { min-width: 100%; height: 100%; position: relative; overflow: hidden; }
+  .slide-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    filter: blur(18px) brightness(0.55);
+    transform: scale(1.15);
+  }
+  .slide-fg {
+    position: absolute; inset: 0;
+    background-size: contain; background-position: center; background-repeat: no-repeat;
+  }
   .slide-caption {
     position: absolute; left: 0; right: 0; bottom: 0;
     padding: 28px 16px 12px;
@@ -235,10 +245,15 @@
       const galeria = document.getElementById('galeria');
       if (conFoto.length === 0) { galeria.innerHTML = ''; return; }
 
-      const slides = conFoto.map(it => `
-        <div class="slide" style="background-image:url('${it.imagen.replace(/'/g, "%27")}')">
+      const slides = conFoto.map(it => {
+        const url = it.imagen.replace(/'/g, "%27");
+        return `
+        <div class="slide">
+          <div class="slide-bg" style="background-image:url('${url}')"></div>
+          <div class="slide-fg" style="background-image:url('${url}')"></div>
           <div class="slide-caption">${escapeHtml(it.nombre || '')}</div>
-        </div>`).join('');
+        </div>`;
+      }).join('');
 
       const dots = conFoto.map((_, i) => `<div class="dot${i === 0 ? ' active' : ''}" onclick="irA(${i})"></div>`).join('');
 
