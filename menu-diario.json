@@ -2,18 +2,19 @@
   "fecha": "Miércoles 17 de Julio",
   "items": [
     {
-      "nombre": "Suprema de pollo en salsa de champiñiones",
-      "descripcion": "",
-      "categoria": "Plato Principal"
+      "nombre": "Suprema de pollo en salsa de champiñones",
+      "categoria": "Plato Principal",
+      "imagen": "https://i.ibb.co/yFtyPyQh/Suprema-de-pollo-con-salsa-de-champi-iones.jpg"
     },
     {
       "nombre": "Charquicán con huevo frito",
-      "descripcion": " ",
-      "categoria": "Plato Principal"
+      "categoria": "Plato Principal",
+      "imagen": "https://i.ibb.co/5hxPF537/Charquic-n.jpg"
     },
     {
       "nombre": "Ñoquis con salsa boloñesa",
-      "categoria": "Plato Principal"
+      "categoria": "Plato Principal",
+      "imagen": "https://i.ibb.co/jPXKxfSF/oquis-con-salsa-Bolo-esa.jpg"
     },
     {
       "nombre": "Acompañamiento a elección",
@@ -29,7 +30,7 @@
       "categoria": "Incluye"
     },
     {
-      "nombre": "Semola con Leche",
+      "nombre": "Leche nevada",
       "categoria": "Postre"
     }
   ],
