@@ -180,6 +180,7 @@
         const grupos = {};
         const sinCategoria = [];
         data.items.forEach(it => {
+          if (!it.nombre || !it.nombre.trim()) return;
           if (it.categoria) {
             grupos[it.categoria] = grupos[it.categoria] || [];
             grupos[it.categoria].push(it);
