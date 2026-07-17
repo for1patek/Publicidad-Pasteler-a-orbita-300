@@ -4,16 +4,19 @@
     {
       "nombre": "Suprema de pollo en salsa de champiñones",
       "categoria": "Plato Principal",
+      "precio": "$6.500",
       "imagen": "https://i.ibb.co/yFtyPyQh/Suprema-de-pollo-con-salsa-de-champi-iones.jpg"
     },
     {
       "nombre": "Charquicán con huevo frito",
       "categoria": "Plato Principal",
+      "precio": "$6.500",
       "imagen": "https://i.ibb.co/5hxPF537/Charquic-n.jpg"
     },
     {
       "nombre": "Ñoquis con salsa boloñesa",
       "categoria": "Plato Principal",
+      "precio": "$6.500",
       "imagen": "https://i.ibb.co/jPXKxfSF/oquis-con-salsa-Bolo-esa.jpg"
     },
     {
