@@ -3,7 +3,7 @@
   "items": [
     {
       "nombre": "Suprema de pollo en salsa de champiñiones",
-      "descripcion": "Acompañamiento: Puré, arroz o papas fritas",
+      "descripcion": "",
       "categoria": "Plato Principal"
     },
     {
@@ -16,8 +16,8 @@
       "categoria": "Plato Principal"
     },
     {
-      "nombre": "Pasta con salsa blanca y pollo",
-      "descripcion": "Opcional agregar camarones",
+      "nombre": "",
+      "descripcion": "",
       "categoria": "Plato Principal"
     },
     {
