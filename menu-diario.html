@@ -49,6 +49,21 @@
   }
   .fecha { font-size: clamp(0.75rem, 2.5vw, 0.85rem); letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
 
+  .slider-wrap { position: relative; width: 100%; margin: 0 0 24px; border-radius: 14px; overflow: hidden; aspect-ratio: 4/3; }
+  .slider-track { display: flex; height: 100%; transition: transform 0.5s ease; }
+  .slide { min-width: 100%; height: 100%; position: relative; background-size: cover; background-position: center; }
+  .slide-caption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 28px 16px 12px;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .slider-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0 0; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); cursor: pointer; transition: background 0.2s; }
+  .dot.active { background: var(--primary); }
+
   .menu-list { display: flex; flex-direction: column; }
   .cat-label {
     font-family: 'Bebas Neue', sans-serif;
@@ -141,6 +156,8 @@
       <div class="fecha" id="fecha">Cargando…</div>
     </div>
 
+    <div id="galeria"></div>
+
     <div id="contenido">
       <div class="estado">Cargando menú del día…</div>
     </div>
@@ -176,6 +193,8 @@
           return;
         }
 
+        montarGaleria(data.items);
+
         // Agrupar por categoría si viene definida; si no, lista plana
         const grupos = {};
         const sinCategoria = [];
@@ -209,6 +228,54 @@
         fechaEl.textContent = '';
         contenido.innerHTML = '<div class="estado">No pudimos cargar el menú del día.<br>Intenta nuevamente en unos minutos.</div>';
       }
+    }
+
+    function montarGaleria(items) {
+      const conFoto = items.filter(it => it.imagen && it.imagen.trim());
+      const galeria = document.getElementById('galeria');
+      if (conFoto.length === 0) { galeria.innerHTML = ''; return; }
+
+      const slides = conFoto.map(it => `
+        <div class="slide" style="background-image:url('${it.imagen.replace(/'/g, "%27")}')">
+          <div class="slide-caption">${escapeHtml(it.nombre || '')}</div>
+        </div>`).join('');
+
+      const dots = conFoto.map((_, i) => `<div class="dot${i === 0 ? ' active' : ''}" onclick="irA(${i})"></div>`).join('');
+
+      galeria.innerHTML = `
+        <div class="slider-wrap">
+          <div class="slider-track" id="track">${slides}</div>
+        </div>
+        <div class="slider-dots" id="dots">${dots}</div>`;
+
+      if (conFoto.length > 1) iniciarCarrusel(conFoto.length);
+    }
+
+    function iniciarCarrusel(total) {
+      let actual = 0;
+      const track = document.getElementById('track');
+      const dots = document.querySelectorAll('#dots .dot');
+      let timer;
+
+      window.irA = function(n) {
+        actual = (n + total) % total;
+        track.style.transform = `translateX(-${actual * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === actual));
+      };
+
+      function mover(dir) {
+        clearInterval(timer);
+        irA(actual + dir);
+        timer = setInterval(() => mover(1), 4000);
+      }
+      timer = setInterval(() => mover(1), 4000);
+
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) mover(diff > 0 ? 1 : -1);
+      }, { passive: true });
     }
 
     function renderItem(it) {
