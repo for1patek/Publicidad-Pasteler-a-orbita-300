@@ -123,6 +123,9 @@
     <label>Fecha a mostrar</label>
     <input type="text" id="fecha" placeholder="Ej: Martes 14 de Julio">
 
+    <label>Valor del menú (opcional)</label>
+    <input type="text" id="valor" placeholder="Ej: $6.500">
+
     <label>Nota / aviso (opcional)</label>
     <input type="text" id="nota" placeholder="Ej: Menú disponible mientras dure el stock">
 
@@ -180,6 +183,7 @@
 
   function recolectarDatos() {
     const fecha = document.getElementById('fecha').value.trim();
+    const valor = document.getElementById('valor').value.trim();
     const nota = document.getElementById('nota').value.trim();
     const items = [];
 
@@ -200,7 +204,7 @@
       }
     });
 
-    return { fecha, items, ...(nota ? { nota } : {}) };
+    return { fecha, ...(valor ? { valor } : {}), items, ...(nota ? { nota } : {}) };
   }
 
   function descargar() {
