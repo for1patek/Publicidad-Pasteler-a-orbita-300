@@ -1,18 +1,18 @@
 {
-  "fecha": "Miércoles 14 de Julio",
+  "fecha": "Miércoles 17 de Julio",
   "items": [
     {
-      "nombre": "Suprema de pollo",
-      "descripcion": "En salsa de champiñones",
+      "nombre": "Suprema de pollo en salsa de champiñiones",
+      "descripcion": "Acompañamiento: Puré, arroz o papas fritas",
       "categoria": "Plato Principal"
     },
     {
-      "nombre": "Carne de vacuno",
-      "descripcion": "Salsa de champiñones opcional",
+      "nombre": "Charquicán con huevo frito",
+      "descripcion": " ",
       "categoria": "Plato Principal"
     },
     {
-      "nombre": "Pollo asado",
+      "nombre": "Ñoquis con salsa boloñesa",
       "categoria": "Plato Principal"
     },
     {
