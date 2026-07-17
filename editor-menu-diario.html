@@ -166,6 +166,9 @@
 
       <label>Descripción (opcional)</label>
       <input type="text" id="descripcion-${id}" placeholder="Ej: Con arroz y ensalada" value="${valores?.descripcion || ''}">
+
+      <label>Imagen del plato (URL, opcional)</label>
+      <input type="text" id="imagen-${id}" placeholder="Ej: https://i.ibb.co/..." value="${valores?.imagen || ''}">
     `;
     document.getElementById('items').appendChild(div);
   }
@@ -186,11 +189,13 @@
       const precio = document.getElementById('precio-' + id).value.trim();
       const categoria = document.getElementById('categoria-' + id).value.trim();
       const descripcion = document.getElementById('descripcion-' + id).value.trim();
+      const imagen = document.getElementById('imagen-' + id).value.trim();
       if (nombre) {
         const item = { nombre };
         if (descripcion) item.descripcion = descripcion;
         if (precio) item.precio = precio;
         if (categoria) item.categoria = categoria;
+        if (imagen) item.imagen = imagen;
         items.push(item);
       }
     });
