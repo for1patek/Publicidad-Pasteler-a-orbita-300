@@ -1,26 +1,21 @@
 {
-  "fecha": "Miércoles 17 de Julio",
+  "fecha": "20 de Julio",
   "valor": "$6.500",
   "items": [
     {
-      "nombre": "Suprema de pollo en salsa de champiñones",
-      "categoria": "Plato Principal",
-      "imagen": "https://i.ibb.co/yFtyPyQh/Suprema-de-pollo-con-salsa-de-champi-iones.jpg"
+      "nombre": "Pollo Asado",
+      "categoria": "Plato de Fondo",
+      "imagen": "https://i.ibb.co/twTGrjGp/Pollo-Asado.jpg"
     },
     {
-      "nombre": "Charquicán con huevo frito",
-      "categoria": "Plato Principal",
-      "imagen": "https://i.ibb.co/5hxPF537/Charquic-n.jpg"
+      "nombre": "Lasaña",
+      "categoria": "Plato de Fondo",
+      "imagen": "https://i.ibb.co/wryHCpzZ/Lasa-a.jpg"
     },
     {
-      "nombre": "Ñoquis con salsa boloñesa",
-      "categoria": "Plato Principal",
+      "nombre": "Ñoquis con Boloñesa",
+      "categoria": "Plato de Fondo",
       "imagen": "https://i.ibb.co/jPXKxfSF/oquis-con-salsa-Bolo-esa.jpg"
-    },
-    {
-      "nombre": "Acompañamiento a elección",
-      "descripcion": "Puré casero, arroz o papas fritas",
-      "categoria": "Incluye"
     },
     {
       "nombre": "Ensalada surtida",
@@ -31,7 +26,7 @@
       "categoria": "Incluye"
     },
     {
-      "nombre": "Leche nevada",
+      "nombre": "Sémola con leche",
       "categoria": "Postre"
     }
   ],
