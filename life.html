@@ -282,8 +282,21 @@
   </div>
 </div>
 </div>
+<div class="slider-wrap">
+  <div class="slider-track" id="track">
+    <div class="slide" style="background-image:url('https://i.ibb.co/GQcn1HMK/Batido-Life-Tropical.jpg');background-size:cover;background-position:center"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/hJ9gb4jX/Batido-Life-Man-Power.jpg');background-size:cover;background-position:center"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/RkP1jm9Q/Batido-Life-Turbo-Verde.jpg');background-size:cover;background-position:center"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/675RhvBN/Batido-Life-Frutos-Rojos.jpg');background-size:cover;background-position:center"></div>
+    <div class="slide" style="background-image:url('https://i.ibb.co/v6dJVTB1/Batido-Life-rbita.jpg');background-size:cover;background-position:center"></div>
+  </div>
+</div>
 <div class="slider-dots" id="dots">
   <div class="dot active" onclick="irA(0)"></div>
+  <div class="dot" onclick="irA(1)"></div>
+  <div class="dot" onclick="irA(2)"></div>
+  <div class="dot" onclick="irA(3)"></div>
+  <div class="dot" onclick="irA(4)"></div>
 </div>
 
 <div class="footer">
@@ -314,7 +327,7 @@
   }
 
   let actual = 0;
-  const total = 1;
+  const total = 5;
   const track = document.getElementById('track');
   const dots = document.querySelectorAll('.dot');
 
