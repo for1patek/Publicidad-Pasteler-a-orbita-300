@@ -27,7 +27,8 @@
     },
     {
       "nombre": "Strudel",
-      "categoria": "Postre"
+      "categoria": "Postre",
+      "imagen": "https://i.ibb.co/vymtckn/Strudel.jpg"
     }
   ]
 }
