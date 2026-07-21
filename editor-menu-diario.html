@@ -28,7 +28,7 @@
   .sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 24px; }
 
   label { display: block; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; margin-top: 14px; }
-  input, textarea {
+  input {
     width: 100%;
     background: var(--card);
     border: 1px solid var(--border);
@@ -38,24 +38,38 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 0.9rem;
   }
-  input:focus, textarea:focus { outline: none; border-color: var(--primary); }
+  input:focus { outline: none; border-color: var(--primary); }
+
+  .seccion {
+    margin-top: 30px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
+  .seccion-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.15rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .seccion-ayuda { font-size: 0.78rem; color: var(--muted); margin-top: 2px; margin-bottom: 4px; }
 
   .item-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 14px 14px 16px;
-    margin-top: 16px;
+    margin-top: 12px;
     position: relative;
   }
-  .item-num { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--primary); font-size: 0.9rem; }
-  .row2 { display: flex; gap: 10px; }
-  .row2 > div { flex: 1; }
+  .item-num { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--muted); font-size: 0.78rem; }
 
   .btn-eliminar {
     position: absolute; top: 10px; right: 10px;
     background: none; border: none; color: var(--danger);
-    font-size: 0.75rem; cursor: pointer; letter-spacing: 1px;
+    font-size: 0.72rem; cursor: pointer; letter-spacing: 1px;
   }
   .btn-eliminar:hover { text-decoration: underline; }
 
@@ -63,19 +77,17 @@
     display: inline-block;
     font-family: 'DM Sans', sans-serif;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     border: none;
     border-radius: 8px;
-    padding: 12px 20px;
+    padding: 10px 16px;
     cursor: pointer;
-    margin-top: 18px;
+    margin-top: 12px;
   }
   .btn-secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
   .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
-  .btn-primary { background: var(--primary); color: #08080a; width: 100%; margin-top: 28px; font-size: 0.95rem; }
+  .btn-primary { background: var(--primary); color: #08080a; width: 100%; margin-top: 32px; font-size: 0.95rem; padding: 13px 20px; }
   .btn-primary:hover { filter: brightness(1.08); }
-
-  .divider { height: 1px; background: var(--border); margin: 28px 0 8px; }
 
   .preview {
     margin-top: 14px;
@@ -105,6 +117,9 @@
     margin-bottom: 24px;
   }
   .instrucciones b { color: var(--text); }
+
+  .fila-top { display: flex; gap: 10px; }
+  .fila-top > div { flex: 1; }
 </style>
 </head>
 <body>
@@ -114,26 +129,48 @@
 
     <div class="instrucciones">
       <b>Cómo usarlo:</b><br>
-      1. Completá la fecha y los platos de hoy.<br>
+      1. Completá fecha, valor y los platos de hoy.<br>
       2. Tocá <b>"Descargar menu-diario.json"</b>.<br>
       3. Reemplazá el archivo <b>menu-diario.json</b> en tu repo (GitHub) por el que se descargó.<br>
       4. Vercel actualiza el sitio solo en unos segundos.
     </div>
 
-    <label>Fecha a mostrar</label>
-    <input type="text" id="fecha" placeholder="Ej: Martes 14 de Julio">
-
-    <label>Valor del menú (opcional)</label>
-    <input type="text" id="valor" placeholder="Ej: $6.500">
+    <div class="fila-top">
+      <div>
+        <label>Fecha</label>
+        <input type="text" id="fecha" placeholder="Ej: Martes 21 de Julio">
+      </div>
+      <div>
+        <label>Valor del menú</label>
+        <input type="text" id="valor" placeholder="Ej: $6.500">
+      </div>
+    </div>
 
     <label>Nota / aviso (opcional)</label>
-    <input type="text" id="nota" placeholder="Ej: Menú disponible mientras dure el stock">
+    <input type="text" id="nota" placeholder="Ej: Pide antes de las 11:00 hrs">
 
-    <div class="divider"></div>
+    <!-- PLATO DE FONDO -->
+    <div class="seccion">
+      <div class="seccion-titulo">🍽️ Plato de Fondo</div>
+      <div class="seccion-ayuda">Agregá las opciones del día. La foto es opcional.</div>
+      <div id="fondo"></div>
+      <button class="btn btn-secondary" onclick="agregarFondo()">+ Agregar plato de fondo</button>
+    </div>
 
-    <div id="items"></div>
+    <!-- INCLUYE -->
+    <div class="seccion">
+      <div class="seccion-titulo">🥗 Incluye</div>
+      <div class="seccion-ayuda">Lo que viene con todos los platos.</div>
+      <div id="incluye"></div>
+      <button class="btn btn-secondary" onclick="agregarIncluye()">+ Agregar item</button>
+    </div>
 
-    <button class="btn btn-secondary" onclick="agregarItem()">+ Agregar plato</button>
+    <!-- POSTRE -->
+    <div class="seccion">
+      <div class="seccion-titulo">🍮 Postre</div>
+      <label>Postre de hoy</label>
+      <input type="text" id="postre" placeholder="Ej: Sémola con leche">
+    </div>
 
     <button class="btn btn-primary" onclick="descargar()">⬇ Descargar menu-diario.json</button>
 
@@ -141,68 +178,74 @@
   </div>
 
 <script>
-  let contador = 0;
+  let contadorFondo = 0;
+  let contadorIncluye = 0;
 
-  function agregarItem(valores) {
-    contador++;
-    const id = contador;
+  function agregarFondo(nombre, imagen) {
+    contadorFondo++;
+    const id = 'f' + contadorFondo;
     const div = document.createElement('div');
     div.className = 'item-card';
-    div.id = 'item-' + id;
+    div.id = id;
     div.innerHTML = `
-      <button class="btn-eliminar" onclick="eliminarItem(${id})">Eliminar ✕</button>
-      <div class="item-num">Plato ${id}</div>
-
-      <label>Nombre del plato</label>
-      <input type="text" id="nombre-${id}" placeholder="Ej: Cazuela de Vacuno" value="${valores?.nombre || ''}">
-
-      <div class="row2">
-        <div>
-          <label>Precio</label>
-          <input type="text" id="precio-${id}" placeholder="Ej: $5.000" value="${valores?.precio || ''}">
-        </div>
-        <div>
-          <label>Categoría (opcional)</label>
-          <input type="text" id="categoria-${id}" placeholder="Ej: Plato de Fondo" value="${valores?.categoria || ''}">
-        </div>
-      </div>
-
-      <label>Descripción (opcional)</label>
-      <input type="text" id="descripcion-${id}" placeholder="Ej: Con arroz y ensalada" value="${valores?.descripcion || ''}">
-
-      <label>Imagen del plato (URL, opcional)</label>
-      <input type="text" id="imagen-${id}" placeholder="Ej: https://i.ibb.co/..." value="${valores?.imagen || ''}">
+      <button class="btn-eliminar" onclick="document.getElementById('${id}').remove()">Eliminar ✕</button>
+      <div class="item-num">Plato de fondo</div>
+      <label>Nombre</label>
+      <input type="text" id="${id}-nombre" placeholder="Ej: Pollo Asado" value="${nombre || ''}">
+      <label>Foto (URL, opcional)</label>
+      <input type="text" id="${id}-imagen" placeholder="Ej: https://i.ibb.co/..." value="${imagen || ''}">
     `;
-    document.getElementById('items').appendChild(div);
+    document.getElementById('fondo').appendChild(div);
   }
 
-  function eliminarItem(id) {
-    const el = document.getElementById('item-' + id);
-    if (el) el.remove();
+  function agregarIncluye(nombre) {
+    contadorIncluye++;
+    const id = 'i' + contadorIncluye;
+    const div = document.createElement('div');
+    div.className = 'item-card';
+    div.id = id;
+    div.innerHTML = `
+      <button class="btn-eliminar" onclick="document.getElementById('${id}').remove()">Eliminar ✕</button>
+      <div class="item-num">Incluye</div>
+      <label>Nombre</label>
+      <input type="text" id="${id}-nombre" placeholder="Ej: Ensalada surtida" value="${nombre || ''}">
+    `;
+    document.getElementById('incluye').appendChild(div);
+  }
+
+  function leerFondo() {
+    const items = [];
+    document.querySelectorAll('#fondo .item-card').forEach(card => {
+      const id = card.id;
+      const nombre = document.getElementById(id + '-nombre').value.trim();
+      const imagen = document.getElementById(id + '-imagen').value.trim();
+      if (nombre) {
+        const item = { nombre, categoria: 'Plato de Fondo' };
+        if (imagen) item.imagen = imagen;
+        items.push(item);
+      }
+    });
+    return items;
+  }
+
+  function leerIncluye() {
+    const items = [];
+    document.querySelectorAll('#incluye .item-card').forEach(card => {
+      const id = card.id;
+      const nombre = document.getElementById(id + '-nombre').value.trim();
+      if (nombre) items.push({ nombre, categoria: 'Incluye' });
+    });
+    return items;
   }
 
   function recolectarDatos() {
     const fecha = document.getElementById('fecha').value.trim();
     const valor = document.getElementById('valor').value.trim();
     const nota = document.getElementById('nota').value.trim();
-    const items = [];
+    const postre = document.getElementById('postre').value.trim();
 
-    document.querySelectorAll('.item-card').forEach(card => {
-      const id = card.id.replace('item-', '');
-      const nombre = document.getElementById('nombre-' + id).value.trim();
-      const precio = document.getElementById('precio-' + id).value.trim();
-      const categoria = document.getElementById('categoria-' + id).value.trim();
-      const descripcion = document.getElementById('descripcion-' + id).value.trim();
-      const imagen = document.getElementById('imagen-' + id).value.trim();
-      if (nombre) {
-        const item = { nombre };
-        if (descripcion) item.descripcion = descripcion;
-        if (precio) item.precio = precio;
-        if (categoria) item.categoria = categoria;
-        if (imagen) item.imagen = imagen;
-        items.push(item);
-      }
-    });
+    const items = [...leerFondo(), ...leerIncluye()];
+    if (postre) items.push({ nombre: postre, categoria: 'Postre' });
 
     return { fecha, ...(valor ? { valor } : {}), items, ...(nota ? { nota } : {}) };
   }
@@ -230,8 +273,10 @@
     URL.revokeObjectURL(url);
   }
 
-  // Arranca con un plato vacío listo para completar
-  agregarItem();
+  // Arranca con 1 plato de fondo vacío y los 2 "incluye" típicos precargados
+  agregarFondo();
+  agregarIncluye('Ensalada surtida');
+  agregarIncluye('Pan casero');
 </script>
 </body>
 </html>
