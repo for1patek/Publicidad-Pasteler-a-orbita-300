@@ -1,21 +1,21 @@
 {
-  "fecha": "20 de Julio",
+  "fecha": "21 Julio",
   "valor": "$6.500",
   "items": [
     {
-      "nombre": "Pollo Asado",
+      "nombre": "Pollo en Salsa de Champiñones",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/twTGrjGp/Pollo-Asado.jpg"
+      "imagen": "https://i.ibb.co/yn4Hr4Mj/Suprema-de-pollo-con-salsa-de-champi-iones.jpg"
     },
     {
-      "nombre": "Lasaña",
+      "nombre": "Pollo Crispy",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/wryHCpzZ/Lasa-a.jpg"
+      "imagen": "https://i.ibb.co/Nn7tycRv/Pollo-Crispy.jpg"
     },
     {
-      "nombre": "Ñoquis con Boloñesa",
+      "nombre": "Vacuno al Jugo",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/jPXKxfSF/oquis-con-salsa-Bolo-esa.jpg"
+      "imagen": "https://i.ibb.co/YFnzbLtc/Vacuno-al-Jugo.jpg"
     },
     {
       "nombre": "Ensalada surtida",
@@ -26,9 +26,8 @@
       "categoria": "Incluye"
     },
     {
-      "nombre": "Sémola con leche",
+      "nombre": "Strudel",
       "categoria": "Postre"
     }
-  ],
-  "nota": "📲 Pide antes de las 11:00 hrs para asegurar tu almuerzo · 🚚 Te esperamos en Órbita Foodtruck, exterior de Blu."
+  ]
 }
