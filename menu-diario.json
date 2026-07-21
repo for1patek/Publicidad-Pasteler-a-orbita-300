@@ -18,6 +18,11 @@
       "imagen": "https://i.ibb.co/YFnzbLtc/Vacuno-al-Jugo.jpg"
     },
     {
+      "nombre": "Acompañamiento a elección",
+      "descripcion": "Puré, arroz o papas fritas",
+      "categoria": "Incluye"
+    },
+    {
       "nombre": "Ensalada surtida",
       "categoria": "Incluye"
     },
