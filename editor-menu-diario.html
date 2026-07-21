@@ -170,6 +170,8 @@
       <div class="seccion-titulo">🍮 Postre</div>
       <label>Postre de hoy</label>
       <input type="text" id="postre" placeholder="Ej: Sémola con leche">
+      <label>Foto (URL, opcional)</label>
+      <input type="text" id="postre-imagen" placeholder="Ej: https://i.ibb.co/...">
     </div>
 
     <button class="btn btn-primary" onclick="descargar()">⬇ Descargar menu-diario.json</button>
@@ -243,9 +245,14 @@
     const valor = document.getElementById('valor').value.trim();
     const nota = document.getElementById('nota').value.trim();
     const postre = document.getElementById('postre').value.trim();
+    const postreImagen = document.getElementById('postre-imagen').value.trim();
 
     const items = [...leerFondo(), ...leerIncluye()];
-    if (postre) items.push({ nombre: postre, categoria: 'Postre' });
+    if (postre) {
+      const item = { nombre: postre, categoria: 'Postre' };
+      if (postreImagen) item.imagen = postreImagen;
+      items.push(item);
+    }
 
     return { fecha, ...(valor ? { valor } : {}), items, ...(nota ? { nota } : {}) };
   }
