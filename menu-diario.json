@@ -1,39 +1,39 @@
 {
-  "fecha": "21 Julio",
+  "fecha": "22 de Julio",
   "valor": "$6.500",
   "items": [
     {
-      "nombre": "Pollo en Salsa de Champiñones",
+      "nombre": "Pollo Asado",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/yn4Hr4Mj/Suprema-de-pollo-con-salsa-de-champi-iones.jpg"
+      "imagen": "https://i.ibb.co/twTGrjGp/Pollo-Asado.jpg"
     },
     {
-      "nombre": "Pollo Crispy",
+      "nombre": "Canelones de Pollo Espinaca/Pollo Choclo con Salsa blanca",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/Nn7tycRv/Pollo-Crispy.jpg"
+      "imagen": "https://i.ibb.co/Y4Z8gRZS/Canelones-de-Pollo-con-Salsa-blanca.jpg"
     },
     {
-      "nombre": "Vacuno al Jugo",
+      "nombre": "Fajita de Pollo con Papas fritas",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/YFnzbLtc/Vacuno-al-Jugo.jpg"
+      "imagen": "https://i.ibb.co/RprdMYFy/Fajita-de-pollo.jpg"
     },
     {
-      "nombre": "Acompañamiento a elección",
-      "descripcion": "Puré, arroz o papas fritas",
+      "nombre": "Ensalada Surtida",
       "categoria": "Incluye"
     },
     {
-      "nombre": "Ensalada surtida",
+      "nombre": "Pan Casero",
       "categoria": "Incluye"
     },
     {
-      "nombre": "Pan casero",
-      "categoria": "Incluye"
+      "nombre": "Acompañamiento",
+      "categoria": "Incluye",
+      "descripcion": "Puré, Arroz, o Papas fritas"
     },
     {
-      "nombre": "Strudel",
+      "nombre": "Sémola con Leche",
       "categoria": "Postre",
-      "imagen": "https://i.ibb.co/vymtckn/Strudel.jpg"
+      "imagen": "https://i.ibb.co/BVBmSjN0/S-mola-con-Leche.jpg"
     }
   ]
 }
