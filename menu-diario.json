@@ -1,39 +1,39 @@
 {
-  "fecha": "22 de Julio",
+  "fecha": "24 de Julio",
   "valor": "$6.500",
   "items": [
     {
       "nombre": "Pollo Asado",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/twTGrjGp/Pollo-Asado.jpg"
+      "imagen": "https://i.ibb.co/B9nfkb7/Pollo-Asado.jpg"
     },
     {
-      "nombre": "Canelones de Pollo Espinaca/Pollo Choclo con Salsa blanca",
+      "nombre": "Pastel de Papas",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/Y4Z8gRZS/Canelones-de-Pollo-con-Salsa-blanca.jpg"
+      "imagen": "https://i.ibb.co/KzQdF86b/Pastel-de-Papas.jpg"
     },
     {
-      "nombre": "Fajita de Pollo con Papas fritas",
+      "nombre": "Ñoquis con Salsa Boloñesa",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/RprdMYFy/Fajita-de-pollo.jpg"
+      "imagen": "https://i.ibb.co/XndX4Hp/oquis-con-salsa-Bolo-esa.jpg"
     },
     {
-      "nombre": "Ensalada Surtida",
-      "categoria": "Incluye"
-    },
-    {
-      "nombre": "Pan Casero",
-      "categoria": "Incluye"
-    },
-    {
-      "nombre": "Acompañamiento",
+      "nombre": "Acompañamiento a elección",
       "categoria": "Incluye",
-      "descripcion": "Puré, Arroz, o Papas fritas"
+      "descripcion": "Puré o Arroz"
     },
     {
-      "nombre": "Sémola con Leche",
+      "nombre": "Ensalada surtida",
+      "categoria": "Incluye"
+    },
+    {
+      "nombre": "Pan casero",
+      "categoria": "Incluye"
+    },
+    {
+      "nombre": "Trozo de Pie de Limón (CASERO)",
       "categoria": "Postre",
-      "imagen": "https://i.ibb.co/BVBmSjN0/S-mola-con-Leche.jpg"
+      "imagen": "https://i.ibb.co/xtDwhgnZ/pie-de-limon-1.jpg"
     }
   ]
 }
