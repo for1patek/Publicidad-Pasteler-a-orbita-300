@@ -1,26 +1,26 @@
 {
-  "fecha": "24 de Julio",
+  "fecha": "29 de Julio",
   "valor": "$6.500",
   "items": [
     {
+      "nombre": "Lasaña",
+      "categoria": "Plato de Fondo",
+      "imagen": "https://i.ibb.co/PKL79WQ/Lasa-a.jpg"
+    },
+    {
       "nombre": "Pollo Asado",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/B9nfkb7/Pollo-Asado.jpg"
+      "imagen": "https://i.ibb.co/MjcNG1R/Pollo-Asado.jpg"
     },
     {
-      "nombre": "Pastel de Papas",
+      "nombre": "Pollo Arvejado",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/KzQdF86b/Pastel-de-Papas.jpg"
-    },
-    {
-      "nombre": "Ñoquis con Salsa Boloñesa",
-      "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/XndX4Hp/oquis-con-salsa-Bolo-esa.jpg"
+      "imagen": "https://i.ibb.co/d0SGWf1g/Pollo-Arvejado.jpg"
     },
     {
       "nombre": "Acompañamiento a elección",
       "categoria": "Incluye",
-      "descripcion": "Puré o Arroz"
+      "descripcion": "Puré Casero o Arroz"
     },
     {
       "nombre": "Ensalada surtida",
@@ -31,9 +31,8 @@
       "categoria": "Incluye"
     },
     {
-      "nombre": "Trozo de Pie de Limón (CASERO)",
-      "categoria": "Postre",
-      "imagen": "https://i.ibb.co/xtDwhgnZ/pie-de-limon-1.jpg"
+      "nombre": "Postre Casero",
+      "categoria": "Postre"
     }
   ]
 }
