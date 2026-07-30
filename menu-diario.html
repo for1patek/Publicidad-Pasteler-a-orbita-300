@@ -108,6 +108,19 @@
   .item:last-child { border-bottom: none; }
   .item-main { display: flex; gap: 10px; flex: 1; }
   .item-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); margin-top: 7px; flex-shrink: 0; }
+  .item-num-badge {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #08080a;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.72rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
   .item-name { font-size: clamp(0.9rem, 3vw, 1rem); font-weight: 600; color: var(--text); }
   .item-desc { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
   .item-price { font-size: 0.85rem; font-weight: 600; color: var(--primary); white-space: nowrap; flex-shrink: 0; }
@@ -239,7 +252,8 @@
 
         Object.keys(grupos).forEach(cat => {
           html += `<div class="cat-label">${escapeHtml(cat)}</div>`;
-          grupos[cat].forEach(it => { html += renderItem(it); });
+          const numerado = cat.toLowerCase().includes('fondo');
+          grupos[cat].forEach((it, i) => { html += renderItem(it, numerado ? i + 1 : null); });
         });
 
         html += '</div>';
@@ -308,11 +322,14 @@
       }, { passive: true });
     }
 
-    function renderItem(it) {
+    function renderItem(it, numero) {
+      const marcador = numero
+        ? `<span class="item-num-badge">${numero}</span>`
+        : `<span class="item-dot"></span>`;
       return `
         <div class="item">
           <div class="item-main">
-            <span class="item-dot"></span>
+            ${marcador}
             <div>
               <div class="item-name">${escapeHtml(it.nombre || '')}</div>
               ${it.descripcion ? `<div class="item-desc">${escapeHtml(it.descripcion)}</div>` : ''}
