@@ -1,26 +1,26 @@
 {
-  "fecha": "29 de Julio",
+  "fecha": "31 de Julio",
   "valor": "$6.500",
   "items": [
     {
-      "nombre": "Lasaña",
+      "nombre": "Budín de Espinaca",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/PKL79WQ/Lasa-a.jpg"
+      "imagen": "https://i.ibb.co/gbT2mHbd/Bud-n-de-Espinaca.jpg"
     },
     {
-      "nombre": "Pollo Asado",
+      "nombre": "Pollo con Salsa de Champiñones",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/MjcNG1R/Pollo-Asado.jpg"
+      "imagen": "https://i.ibb.co/6RWdkyMZ/Pollo-con-Salsa-de-Champi-ones.jpg"
     },
     {
-      "nombre": "Pollo Arvejado",
+      "nombre": "Pasta con Salsa Blanca de Pollo",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/d0SGWf1g/Pollo-Arvejado.jpg"
+      "imagen": "https://i.ibb.co/YTtqZmpb/Fideos-con-Salsa-Blanca.jpg"
     },
     {
       "nombre": "Acompañamiento a elección",
       "categoria": "Incluye",
-      "descripcion": "Puré Casero o Arroz"
+      "descripcion": "Puré o Arroz"
     },
     {
       "nombre": "Ensalada surtida",
@@ -31,8 +31,9 @@
       "categoria": "Incluye"
     },
     {
-      "nombre": "Postre Casero",
-      "categoria": "Postre"
+      "nombre": "Sémola con Leche (casero)",
+      "categoria": "Postre",
+      "imagen": "https://i.ibb.co/0VBmX1yL/S-mola-con-Leche.jpg"
     }
   ]
 }
