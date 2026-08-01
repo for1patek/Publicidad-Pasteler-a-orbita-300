@@ -1,24 +1,24 @@
 {
-  "fecha": "31 de Julio",
+  "fecha": "1 de Agosto",
   "valor": "$6.500",
   "items": [
     {
-      "nombre": "Budín de Espinaca",
+      "nombre": "Lentejas con Longaniza y Carne Ahumada",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/gbT2mHbd/Bud-n-de-Espinaca.jpg"
+      "imagen": "https://i.ibb.co/nMHHjvZ3/Lentejas-con-Longaniza-y-Carne-Ahumada.jpg"
     },
     {
-      "nombre": "Pollo con Salsa de Champiñones",
+      "nombre": "Suprema de Pollo con Salsa de Champiñones",
       "categoria": "Plato de Fondo",
       "imagen": "https://i.ibb.co/6RWdkyMZ/Pollo-con-Salsa-de-Champi-ones.jpg"
     },
     {
-      "nombre": "Pasta con Salsa Blanca de Pollo",
+      "nombre": "Pollo Asado",
       "categoria": "Plato de Fondo",
-      "imagen": "https://i.ibb.co/YTtqZmpb/Fideos-con-Salsa-Blanca.jpg"
+      "imagen": "https://i.ibb.co/MjcNG1R/Pollo-Asado.jpg"
     },
     {
-      "nombre": "Acompañamiento a elección (Plato 2)",
+      "nombre": "Acompañamiento a elección (PLATO 2 Y 3)",
       "categoria": "Incluye",
       "descripcion": "Puré o Arroz"
     },
@@ -31,9 +31,9 @@
       "categoria": "Incluye"
     },
     {
-      "nombre": "Sémola con Leche (casero)",
-      "categoria": "Postre",
-      "imagen": "https://i.ibb.co/0VBmX1yL/S-mola-con-Leche.jpg"
+      "nombre": "Postre Casero",
+      "categoria": "Postre"
     }
-  ]
+  ],
+  "nota": "Reservar al rededor de las 11:00 AM por favor. Gracias😊."
 }
